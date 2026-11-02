@@ -34,7 +34,7 @@ func NewLocalModel(endpoint, name string, parallel int, timeout time.Duration) (
 // All network endpoints remain numeric loopback only. A profile is an
 // optimization hint, never permission to bypass Speedit out's decision gate.
 func NewLocalModelWithProfile(endpoint, name string, parallel int, timeout time.Duration, profile string) (*LocalModel, error) {
-	if profile != "generic" && profile != "qwen3-1.7b" {
+	if profile != "generic" && profile != "qwen3-1.7b" && profile != "qwen3-1.7b-evidence" {
 		return nil, errors.New("unsupported local model profile")
 	}
 	if endpoint == "" {
