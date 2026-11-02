@@ -36,7 +36,7 @@ var (
 	attributionRE    = regexp.MustCompile(`\b(?:diz|disse|falou|contou|afirmou|comentou|relatou|garantiu|acha|achou|pediu|escreveu)\b`)
 	firstRE          = regexp.MustCompile(`\b(?:eu|me|meu|minha|comigo|mim|levei|tomei|fui|fiz|acho|sinto)\b`)
 	directiveRE      = regexp.MustCompile(`\b(?:escrev[ae]|redij[ae]|prepar[ae]|responda|mand[ae]|avis[ae]|transmita|diga|fala pro|fale ao)\b`)
-	draftNegRE       = regexp.MustCompile(`\b(?:nao (?:me )?(?:escreva|redija|prepare|responda|mande|envie|faca)|nada de (?:email|e-mail|mensagem|resposta)|nenhum (?:email|e-mail|rascunho)|so (?:quero|queria|preciso) (?:reclamar|desabafar|conversar)|so estou desabafando|so to desabafando|nao vou mandar|nao quero (?:mandar|responder|enviar))\b`)
+	draftNegRE       = regexp.MustCompile(`\b(?:nao (?:me )?(?:escreva|redija|prepare|responda|mande|envie|faca)|nada de (?:email|e-mail|mensagem|resposta)|nenhum (?:email|e-mail|rascunho)|(?:so (?:quero|queria|preciso)|(?:quero|queria|preciso) so) (?:reclamar|desabafar|conversar)|so estou desabafando|so to desabafando|nao vou mandar|nao quero (?:mandar|responder|enviar|mensagem|email|e-mail|rascunho))\b`)
 	noDateRE         = regexp.MustCompile(`\b(?:sem (?:garantir|prometer|assumir|indicar|fixar|inventar|mencionar|definir)(?: (?:nenhuma|qualquer|outra))? (?:data|prazo|segunda)|nao (?:quero|vou|posso) (?:assumir|prometer|garantir|fixar)(?: (?:nenhum|qualquer))? (?:prazo|data|compromisso)|nao invente prazo|nao prometa data|sem data|sem prazo|segunda nao serve)\b`)
 	timeRE           = regexp.MustCompile(`\b(?:segunda(?:-feira)?|amanha|terca(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?)\b`)
 	delayRE          = regexp.MustCompile(`\b(?:avaliar|ver|olhar|retomar|retorno|volto|respondo|responder|revisar|so consigo|adiar|deixar|esperar|analiso|verifico)\b`)
@@ -106,7 +106,7 @@ func splitSemantic(text string) []SemanticClause {
 	return result
 }
 func newTrace(req Request) SemanticTrace {
-	return SemanticTrace{Version: "0.9", Clauses: splitSemantic(req.Text), Hypotheses: []SemanticHypothesis{}, Resolution: "insufficient"}
+	return SemanticTrace{Version: "0.11", Clauses: splitSemantic(req.Text), Hypotheses: []SemanticHypothesis{}, Resolution: "insufficient"}
 }
 func traceReturn(o Outcome, trace SemanticTrace, hypothesis SemanticHypothesis) (Outcome, bool) {
 	trace.Hypotheses = append(trace.Hypotheses, hypothesis)
