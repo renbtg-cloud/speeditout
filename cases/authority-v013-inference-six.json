@@ -1,0 +1,56 @@
+[
+  {
+    "id": "V013-001",
+    "text": "Hoje no treinamento, a instrutora falou: 'escreva ao cliente que voltaremos segunda'. Estou relatando o exemplo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V013-002",
+    "text": "Recebi esta ordem do gerente: 'diga ao cliente que respondo amanhã'. Eu não sei se concordo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V013-003",
+    "text": "A coordenadora observou que alguém deveria mandar um email segunda; tô só te contando.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V013-004",
+    "text": "Meu supervisor anotou literalmente 'responda na segunda' no quadro. Não é um pedido meu.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V013-005",
+    "text": "Li a frase 'escreva ao diretor que eu volto amanhã' num slide de aula.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V013-006",
+    "text": "Minha chefe insiste que eu deveria responder na segunda. Que situação chata.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  }
+]
