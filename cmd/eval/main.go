@@ -32,13 +32,17 @@ type Observation struct {
 	Reasons             []string `json:"reasons"`
 }
 type Summary struct {
-	Total   int           `json:"total"`
-	Failed  int           `json:"failed"`
-	Passed  int           `json:"passed"`
-	P50MS   float64       `json:"p50_ms"`
-	P95MS   float64       `json:"p95_ms"`
-	P99MS   float64       `json:"p99_ms"`
-	Results []Observation `json:"results"`
+	Total                   int           `json:"total"`
+	Failed                  int           `json:"failed"`
+	Passed                  int           `json:"passed"`
+	P50MS                   float64       `json:"p50_ms"`
+	P95MS                   float64       `json:"p95_ms"`
+	P99MS                   float64       `json:"p99_ms"`
+	EvidenceGateConsidered  int           `json:"evidence_gate_considered"`
+	EvidenceGateUnavailable int           `json:"evidence_gate_unavailable"`
+	EvidenceGateApplied     int           `json:"evidence_gate_applied"`
+	EvidenceGateUnproven    int           `json:"evidence_gate_unproven"`
+	Results                 []Observation `json:"results"`
 }
 type Report struct {
 	ComparisonEnabled bool     `json:"comparison_enabled"`
@@ -67,10 +71,10 @@ func percent(nums []int64, percentile float64) float64 {
 	}
 	return float64(x[n]) / 1000
 }
-func run(cases []TestCase, eng *engine.Engine) Summary {
+func run(cases []TestCase, eng *engine.Engine, label string, progress bool) Summary {
 	s := Summary{Total: len(cases), Results: make([]Observation, 0, len(cases))}
 	delays := make([]int64, 0, len(cases))
-	for _, tc := range cases {
+	for i, tc := range cases {
 		req := engine.Request{Workspace: "synthetic", UserID: "evaluation", Text: tc.Text, Context: tc.Context}
 		start := time.Now()
 		got := eng.Interpret(req)
@@ -83,6 +87,26 @@ func run(cases []TestCase, eng *engine.Engine) Summary {
 		}
 		s.Results = append(s.Results, Observation{ID: tc.ID, ExpectedIntent: tc.ExpectedIntent, ExpectedDecision: tc.ExpectedDecision, ActualIntent: got.Intent, ActualDecision: got.Decision, Correct: ok, LatencyMicroseconds: elapsed, Reasons: got.Reasons})
 		delays = append(delays, elapsed)
+		gateStatus := ""
+		for _, reason := range got.Reasons {
+			switch reason {
+			case "authority_evidence_unavailable":
+				s.EvidenceGateUnavailable++
+				gateStatus = "unavailable"
+			case "authority_evidence_v013":
+				s.EvidenceGateApplied++
+				gateStatus = "applied"
+			case "authority_evidence_unproven", "authority_evidence_independent_request":
+				s.EvidenceGateUnproven++
+				gateStatus = "unproven"
+			}
+		}
+		if gateStatus != "" {
+			s.EvidenceGateConsidered++
+		}
+		if progress {
+			fmt.Fprintf(os.Stderr, "%s %d/%d id=%s correct=%t elapsed_ms=%.1f gate=%s\n", label, i+1, len(cases), tc.ID, ok, float64(elapsed)/1000, gateStatus)
+		}
 	}
 	s.P50MS = percent(delays, 0.50)
 	s.P95MS = percent(delays, 0.95)
@@ -113,6 +137,7 @@ func main() {
 	profile := flag.String("model-profile", "generic", "generic, qwen3-1.7b, or qwen3-1.7b-evidence")
 	parallel := flag.Int("model-parallel", 1, "maximum concurrent model calls")
 	timeout := flag.Duration("model-timeout", 10*time.Second, "local model timeout on CPU")
+	progress := flag.Bool("progress", false, "per-case status to stderr (no text content)")
 	flag.Parse()
 	b, err := os.ReadFile(*file)
 	if err != nil {
@@ -130,7 +155,7 @@ func main() {
 	}
 	defer mem.Close()
 	r := Report{ModelProfile: *profile, ModelName: *name, Notes: []string{"Accuracy means exact agreement with the stated intent and decision. These are developer-authored scenarios, not a human clinical or usability evaluation.", "Local-model inference is counted only when an actual model endpoint is supplied; synthetic providers cannot establish LLM ability.", "Latency is sequential local elapsed time, NOT throughput under concurrency."}}
-	r.Baseline = run(cases, &engine.Engine{Memory: mem})
+	r.Baseline = run(cases, &engine.Engine{Memory: mem}, "baseline", *progress)
 	if *endpoint != "" {
 		model, err := engine.NewLocalModelWithProfile(*endpoint, *name, *parallel, *timeout, *profile)
 		if err != nil {
@@ -138,7 +163,7 @@ func main() {
 			os.Exit(2)
 		}
 		r.ComparisonEnabled = true
-		x := run(cases, &engine.Engine{Memory: mem, Model: model})
+		x := run(cases, &engine.Engine{Memory: mem, Model: model}, "hybrid", *progress)
 		r.Hybrid = &x
 		r.Improvements, r.Regressions, r.Changed = compare(r.Baseline, x)
 	}

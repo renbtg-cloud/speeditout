@@ -40,6 +40,9 @@ var authorityJSONSchema = map[string]interface{}{
 func parseAuthorityRanking(raw, original string) (AuthorityRanking, error) {
 	var a AuthorityRanking
 	// Go zero values alone cannot distinguish omitted JSON fields.
+	if err := validateModelJSON(raw, 5000); err != nil {
+		return a, err
+	}
 	var keys map[string]json.RawMessage
 	if err := json.Unmarshal([]byte(raw), &keys); err != nil {
 		return a, err
@@ -124,7 +127,7 @@ func (m *LocalModel) RankAuthority(ctx context.Context, req Request) (AuthorityR
 		return empty, err
 	}
 	messages := []map[string]string{{"role": "system", "content": authorityPrompt}, {"role": "user", "content": string(input)}}
-	payload := map[string]interface{}{"model": m.name, "stream": false, "messages": messages, "temperature": 0, "max_tokens": 180, "response_format": map[string]interface{}{"type": "json_schema", "schema": authorityJSONSchema}, "chat_template_kwargs": map[string]interface{}{"enable_thinking": false}}
+	payload := map[string]interface{}{"model": m.name, "stream": false, "messages": messages, "temperature": 0, "max_tokens": 180, "response_format": map[string]interface{}{"type": "json_object", "schema": authorityJSONSchema}, "chat_template_kwargs": map[string]interface{}{"enable_thinking": false}}
 	if strings.HasSuffix(m.endpoint, "/api/chat") {
 		payload = map[string]interface{}{"model": m.name, "stream": false, "messages": messages, "think": false, "format": authorityJSONSchema, "options": map[string]interface{}{"temperature": 0, "num_predict": 180, "num_ctx": 2048}}
 	}
@@ -155,7 +158,7 @@ func (m *LocalModel) RankAuthority(ctx context.Context, req Request) (AuthorityR
 			} `json:"message"`
 		} `json:"choices"`
 	}
-	if err := json.NewDecoder(io.LimitReader(resp.Body, 16<<10)).Decode(&output); err != nil {
+	if err := decodeModelEnvelope(resp.Body, &output); err != nil {
 		return empty, err
 	}
 	content := output.Message.Content

@@ -129,7 +129,7 @@ func (m *LocalModel) Classify(ctx context.Context, req Request) (string, error) 
 			"response_format": map[string]interface{}{"type": "json_object"},
 		}
 		if m.profile == "qwen3-1.7b" {
-			payload["response_format"] = map[string]interface{}{"type": "json_schema", "schema": qwenNavigatorFormat}
+			payload["response_format"] = map[string]interface{}{"type": "json_object", "schema": qwenNavigatorFormat}
 			payload["chat_template_kwargs"] = map[string]interface{}{"enable_thinking": false}
 			payload["temperature"] = 0.7
 			payload["top_p"] = 0.8
@@ -165,8 +165,7 @@ func (m *LocalModel) Classify(ctx context.Context, req Request) (string, error) 
 			} `json:"message"`
 		} `json:"choices"`
 	}
-	dec := json.NewDecoder(io.LimitReader(resp.Body, 16<<10))
-	if err := dec.Decode(&result); err != nil {
+	if err := decodeModelEnvelope(resp.Body, &result); err != nil {
 		return "", err
 	}
 	if strings.HasSuffix(m.endpoint, "/v1/chat/completions") {
@@ -203,6 +202,9 @@ func (m *LocalModel) Classify(ctx context.Context, req Request) (string, error) 
 // evidence occurs in the ORIGINAL utterance (not the system prompt/context).
 // This is a grounding check, NOT proof of semantic correctness.
 func parseQwenNavigatorResult(raw, original string) (string, error) {
+	if err := validateModelJSON(raw, 4096); err != nil {
+		return "", err
+	}
 	var label qwenNavigatorLabel
 	d := json.NewDecoder(strings.NewReader(raw))
 	d.DisallowUnknownFields()

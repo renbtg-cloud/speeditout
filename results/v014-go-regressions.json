@@ -1,0 +1,137 @@
+[
+  {
+    "set": "authority-v012-frozen",
+    "failed": 8,
+    "passed": 24,
+    "total": 32,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0,
+    "errors": [
+      "V012-004",
+      "V012-007",
+      "V012-010",
+      "V012-019",
+      "V012-023",
+      "V012-025",
+      "V012-030",
+      "V012-032"
+    ]
+  },
+  {
+    "set": "authority-v013-frozen",
+    "failed": 9,
+    "passed": 11,
+    "total": 20,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0,
+    "errors": [
+      "V013-001",
+      "V013-002",
+      "V013-003",
+      "V013-004",
+      "V013-005",
+      "V013-006",
+      "V013-011",
+      "V013-018",
+      "V013-020"
+    ]
+  },
+  {
+    "set": "blind-after-freeze-v07",
+    "failed": 0,
+    "passed": 64,
+    "total": 64,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0
+  },
+  {
+    "set": "blind-after-freeze-v08",
+    "failed": 0,
+    "passed": 48,
+    "total": 48,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0
+  },
+  {
+    "set": "final-postfreeze-v09",
+    "failed": 13,
+    "passed": 35,
+    "total": 48,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0,
+    "errors": [
+      "F09-001",
+      "F09-002",
+      "F09-003",
+      "F09-004",
+      "F09-006",
+      "F09-008",
+      "F09-014",
+      "F09-016",
+      "F09-018",
+      "F09-029",
+      "F09-032",
+      "F09-034",
+      "F09-042"
+    ]
+  },
+  {
+    "set": "holdout-v1",
+    "failed": 7,
+    "passed": 23,
+    "total": 30,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0,
+    "errors": [
+      "H01",
+      "H08",
+      "H18",
+      "H23",
+      "H24",
+      "H26",
+      "H30"
+    ]
+  },
+  {
+    "set": "holdout-v2",
+    "failed": 0,
+    "passed": 32,
+    "total": 32,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0
+  },
+  {
+    "set": "prospective-v07-frozen",
+    "failed": 0,
+    "passed": 48,
+    "total": 48,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0
+  },
+  {
+    "set": "prospective-v09-frozen",
+    "failed": 0,
+    "passed": 60,
+    "total": 60,
+    "delta_failures_vs_reference": 0,
+    "new_case_regressions": 0,
+    "new_case_improvements": 0,
+    "changed_case_decisions": 0
+  }
+]

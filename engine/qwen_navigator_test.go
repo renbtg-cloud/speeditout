@@ -161,7 +161,7 @@ func TestQwenNavigatorLlamaCPPProtocol(t *testing.T) {
 			return
 		}
 		format, ok := payload["response_format"].(map[string]interface{})
-		if !ok || format["type"] != "json_schema" || format["schema"] == nil {
+		if !ok || format["type"] != "json_object" || format["schema"] == nil {
 			t.Error("missing json schema")
 		}
 		kwargs, ok := payload["chat_template_kwargs"].(map[string]interface{})

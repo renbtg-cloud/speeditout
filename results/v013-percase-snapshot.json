@@ -1,0 +1,1930 @@
+{
+  "authority-v012-frozen": {
+    "V012-001": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-002": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-003": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-004": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V012-005": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-006": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-007": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V012-008": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-010": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V012-011": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-012": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-013": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-014": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-015": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-016": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-017": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-018": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-019": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "V012-020": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V012-021": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V012-022": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V012-023": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "V012-024": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-025": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V012-026": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-027": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-028": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-029": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V012-030": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "V012-031": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012-032": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    }
+  },
+  "authority-v013-frozen": {
+    "V013-001": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-002": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-003": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-004": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-005": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-006": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-007": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V013-008": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V013-009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V013-010": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V013-011": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-012": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V013-013": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V013-014": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V013-015": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V013-016": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V013-017": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V013-018": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "V013-019": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V013-020": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    }
+  },
+  "blind-after-freeze-v07": {
+    "B001": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B002": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B003": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B004": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B005": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B006": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B007": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B008": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B010": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B011": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B012": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B013": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B014": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B015": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B016": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B017": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B018": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B019": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B020": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B021": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B022": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B023": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B024": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B025": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B026": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B027": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B028": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B029": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B030": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B031": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B032": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B033": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B034": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B035": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B036": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B037": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B038": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B039": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B040": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B041": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B042": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "B043": {
+      "intent": "literal_message",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B044": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B045": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B046": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B047": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B048": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B049": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B050": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B051": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B052": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B053": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B054": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B055": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B056": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B057": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B058": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B059": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B060": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B061": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "B062": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B063": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "B064": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    }
+  },
+  "blind-after-freeze-v08": {
+    "Z001": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z002": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z003": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z004": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z005": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z006": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z007": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z008": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z010": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z011": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z012": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z013": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z014": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z015": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z016": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z017": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z018": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z019": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z020": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z021": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z022": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z023": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z024": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z025": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z026": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z027": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z028": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z029": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z030": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z031": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z032": {
+      "intent": "literal_message",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z033": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z034": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z035": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "Z036": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z037": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z038": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z039": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z040": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z041": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z042": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z043": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z044": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z045": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z046": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "Z047": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "Z048": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    }
+  },
+  "final-postfreeze-v09": {
+    "F09-001": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-002": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-003": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-004": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-005": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-006": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-007": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-008": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-010": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-011": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-012": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-013": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-014": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-015": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-016": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-017": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-018": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-019": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-020": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-021": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-022": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-023": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-024": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-025": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-026": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-027": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-028": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-029": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-030": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-031": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-032": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "F09-033": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "F09-034": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "F09-035": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-036": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-037": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-038": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-039": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-040": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "F09-041": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-042": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "F09-043": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-044": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-045": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-046": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-047": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "F09-048": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    }
+  },
+  "holdout-v1": {
+    "H01": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "H02": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H03": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H04": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H05": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H06": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H07": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H08": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "H09": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H10": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H11": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H12": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H13": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "H14": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "H15": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "H16": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H17": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H18": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": false
+    },
+    "H19": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H20": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H21": {
+      "intent": "literal_message",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "H22": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H23": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "H24": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "H25": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H26": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    },
+    "H27": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H28": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "H29": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "H30": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": false
+    }
+  },
+  "holdout-v2": {
+    "N01": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N02": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N03": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N04": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N05": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N06": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N07": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N08": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N09": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N10": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N11": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N12": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N13": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N14": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N15": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N16": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N17": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N18": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N19": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N20": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "N21": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N22": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N23": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N24": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N25": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N26": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N27": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N28": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "N29": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N30": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N31": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "N32": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    }
+  },
+  "prospective-v07-frozen": {
+    "V001": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V002": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V003": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V004": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V005": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V006": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V007": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V008": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V010": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V011": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V012": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V013": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V014": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V015": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V016": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V017": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V018": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V019": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V020": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V021": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V022": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V023": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V024": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V025": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V026": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V027": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V028": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V029": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V030": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V031": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V032": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V033": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V034": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V035": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V036": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V037": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V038": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "V039": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V040": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V041": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V042": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V043": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V044": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V045": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "V046": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V047": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "V048": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    }
+  },
+  "prospective-v09-frozen": {
+    "P09-001": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-002": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-003": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-004": {
+      "intent": "reject_game",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-005": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-006": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-007": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-008": {
+      "intent": "did_not_understand",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-009": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-010": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-011": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-012": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-013": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-014": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-015": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-016": {
+      "intent": "ghosting_self_blame",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-017": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-018": {
+      "intent": "define_ghosting",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-019": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-020": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-021": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-022": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-023": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-024": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-025": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-026": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-027": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-028": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-029": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-030": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-031": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-032": {
+      "intent": "defer_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-033": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-034": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-035": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-036": {
+      "intent": "do_not_draft",
+      "decision": "reply_and_wait",
+      "correct": true
+    },
+    "P09-037": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-038": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-039": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-040": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-041": {
+      "intent": "question_about_work",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-042": {
+      "intent": "literal_message",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-043": {
+      "intent": "literal_message",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-044": {
+      "intent": "defer_work",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-045": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-046": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-047": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-048": {
+      "intent": "technical_symptom",
+      "decision": "propose_draft",
+      "correct": true
+    },
+    "P09-049": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-050": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-051": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-052": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-053": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-054": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-055": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-056": {
+      "intent": "ambiguous_symptom",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-057": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-058": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-059": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    },
+    "P09-060": {
+      "intent": "unknown",
+      "decision": "clarify",
+      "correct": true
+    }
+  }
+}
