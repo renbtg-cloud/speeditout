@@ -62,7 +62,15 @@ def dequant_q6k(arr):
  return out.reshape(-1)
 
 class Store:
- def __init__(self,g,cache):self.g=g; self.cache=pathlib.Path(cache);self.cache.mkdir(parents=True,exist_ok=True)
+ def __init__(self,g,cache):
+  # Do not silently reuse 3.8 GiB of dequantized weights from another GGUF.
+  # The old path keyed ONLY by tensor name+size and could serve stale weights.
+  self.g=g
+  with open(g.path,'rb') as inp:
+   digest=hashlib.file_digest(inp,'sha256').hexdigest()
+  self.model_sha256=digest
+  self.cache=pathlib.Path(cache)/('sha256-'+digest+'-f16-v1')
+  self.cache.mkdir(parents=True,exist_ok=True)
  def get(self,name):
   dims,ty,_=self.g.tensors[name]; shape=tuple(reversed(dims))
   if ty==0:
@@ -152,6 +160,8 @@ class Runner:
    if (i+1)%7==0:print(f'layer {i+1}/{self.L} in {time.monotonic()-t0:.1f}s',flush=True)
   x=self.norm(x[-1:],self.read('output_norm.weight'))
   if choices is not None:
+   if hasattr(self, 'choice_logits'):
+    return self.choice_logits(x,choices)
    weights=torch.from_numpy(np.asarray(self.store.get('output.weight')[choices,:]).copy()).float()
    logits=F.linear(x,weights).reshape(-1)
    return int(torch.argmax(logits).item()), [float(y) for y in logits.tolist()]

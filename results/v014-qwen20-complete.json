@@ -1,0 +1,558 @@
+{
+  "comparison_enabled": true,
+  "model_profile": "qwen3-1.7b-evidence",
+  "model_name": "qwen3-1.7b",
+  "baseline": {
+    "total": 20,
+    "failed": 9,
+    "passed": 11,
+    "p50_ms": 0.093,
+    "p95_ms": 0.618,
+    "p99_ms": 0.618,
+    "evidence_gate_considered": 0,
+    "evidence_gate_unavailable": 0,
+    "evidence_gate_applied": 0,
+    "evidence_gate_unproven": 0,
+    "results": [
+      {
+        "id": "V013-001",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 618,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-002",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 325,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-003",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 334,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-004",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 126,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-005",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 66,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-006",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 110,
+        "reasons": [
+          "work_context",
+          "defer_intent",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-007",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 111,
+        "reasons": [
+          "no_supported_intent",
+          "no_guess"
+        ]
+      },
+      {
+        "id": "V013-008",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 52,
+        "reasons": [
+          "authority_scope_v011",
+          "quoted_or_reported_instruction"
+        ]
+      },
+      {
+        "id": "V013-009",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 38,
+        "reasons": [
+          "authority_scope_v011",
+          "quoted_or_reported_instruction"
+        ]
+      },
+      {
+        "id": "V013-010",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "do_not_draft",
+        "actual_decision": "reply_and_wait",
+        "correct": true,
+        "latency_microseconds": 35,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-011",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 212,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-012",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "do_not_draft",
+        "actual_decision": "reply_and_wait",
+        "correct": true,
+        "latency_microseconds": 45,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-013",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 82,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-014",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 93,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-015",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 66,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-016",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 68,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-017",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 54,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-018",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 145,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-019",
+        "expected_intent": "question_about_work",
+        "expected_decision": "clarify",
+        "actual_intent": "question_about_work",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 68,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-020",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 104,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      }
+    ]
+  },
+  "hybrid": {
+    "total": 20,
+    "failed": 8,
+    "passed": 12,
+    "p50_ms": 25226.494,
+    "p95_ms": 100141.216,
+    "p99_ms": 100141.216,
+    "evidence_gate_considered": 14,
+    "evidence_gate_unavailable": 2,
+    "evidence_gate_applied": 1,
+    "evidence_gate_unproven": 11,
+    "results": [
+      {
+        "id": "V013-001",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 21432865,
+        "reasons": [
+          "authority_evidence_v013",
+          "opposing_hypotheses_checked",
+          "no_model_grant"
+        ]
+      },
+      {
+        "id": "V013-002",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 24640514,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-003",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 19974072,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-004",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 100141216,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unavailable"
+        ]
+      },
+      {
+        "id": "V013-005",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 41782906,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unavailable"
+        ]
+      },
+      {
+        "id": "V013-006",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 26660750,
+        "reasons": [
+          "work_context",
+          "defer_intent",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-007",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 3027,
+        "reasons": [
+          "no_supported_intent",
+          "no_guess",
+          "model_unavailable_or_busy"
+        ]
+      },
+      {
+        "id": "V013-008",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 90,
+        "reasons": [
+          "authority_scope_v011",
+          "quoted_or_reported_instruction"
+        ]
+      },
+      {
+        "id": "V013-009",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 80,
+        "reasons": [
+          "authority_scope_v011",
+          "quoted_or_reported_instruction"
+        ]
+      },
+      {
+        "id": "V013-010",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "do_not_draft",
+        "actual_decision": "reply_and_wait",
+        "correct": true,
+        "latency_microseconds": 48,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-011",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 26757432,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-012",
+        "expected_intent": "do_not_draft",
+        "expected_decision": "reply_and_wait",
+        "actual_intent": "do_not_draft",
+        "actual_decision": "reply_and_wait",
+        "correct": true,
+        "latency_microseconds": 70,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-013",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 28884695,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_independent_request"
+        ]
+      },
+      {
+        "id": "V013-014",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 27565619,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-015",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 30724823,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-016",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 25226494,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-017",
+        "expected_intent": "defer_work",
+        "expected_decision": "propose_draft",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": true,
+        "latency_microseconds": 24304257,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-018",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 50792719,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-019",
+        "expected_intent": "question_about_work",
+        "expected_decision": "clarify",
+        "actual_intent": "question_about_work",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 86,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-020",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 26899712,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      }
+    ]
+  },
+  "improvements": 1,
+  "regressions": 0,
+  "changed": 1,
+  "notes": [
+    "Accuracy means exact agreement with the stated intent and decision. These are developer-authored scenarios, not a human clinical or usability evaluation.",
+    "Local-model inference is counted only when an actual model endpoint is supplied; synthetic providers cannot establish LLM ability.",
+    "Latency is sequential local elapsed time, NOT throughput under concurrency."
+  ]
+}

@@ -10,6 +10,7 @@ This script intentionally works without llama.cpp or a network connection.
 import argparse
 import http.server
 import json
+import os
 import logging
 import re
 import threading
@@ -17,6 +18,7 @@ import time
 from gguf_qwen3_experimental import GGUF, Store, Tokenizer
 from eval_choice_model import enc_chat
 from compute_backends import RunnerBF16
+from compute_native import RunnerNativeDecode
 
 ROLES = {"A": "reported", "B": "direct", "C": "refusal", "D": "uncertain"}
 INSTRUCTIONS = """Classifique a fonte de autorização na fala da pessoa. Responda APENAS UMA LETRA.
@@ -53,7 +55,7 @@ def compose(choice, text):
 class QwenAuthority:
     def __init__(self, model, cache):
         self.g=GGUF(model); self.t=Tokenizer(self.g.meta)
-        self.r=RunnerBF16(self.g,Store(self.g,cache))
+        self.r=(RunnerNativeDecode if os.environ.get("SPEEDIT_NATIVE_DECODE") == "1" else RunnerBF16)(self.g,Store(self.g,cache))
         self.ids=[self.t.encode(ch)[0] for ch in ROLES]
         self.lock=threading.Lock(); self.count=0
     def rank(self, body):

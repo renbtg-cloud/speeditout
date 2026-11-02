@@ -1,4 +1,4 @@
-// Spititout Viper — research-only direct GGUF Q4_K / Q6_K linear layer.
+// Speedit out Viper — research-only direct GGUF Q4_K / Q6_K linear layer.
 // Input matrix row-major; one GGUF superblock encodes 256 weights.
 // Build: g++ -O3 -march=native -fopenmp -shared -fPIC -o libviper_matvec.so native_matvec.cpp
 #include <cmath>

@@ -10,12 +10,14 @@ reasoning. This is an explicitly documented compromise for the slow CPU runtime.
 import argparse
 import http.server
 import json
+import os
 import re
 import threading
 import time
 from gguf_qwen3_experimental import GGUF, Store, Tokenizer
 from eval_choice_model import enc_chat
 from compute_backends import RunnerBF16
+from compute_native import RunnerNativeDecode
 
 LABELS='ABCDEFGH'
 
@@ -39,7 +41,7 @@ Sem explicações. Uma única letra.'''
 class Selector:
     def __init__(self,model,cache):
         self.g=GGUF(model);self.t=Tokenizer(self.g.meta)
-        self.r=RunnerBF16(self.g,Store(self.g,cache))
+        self.r=(RunnerNativeDecode if os.environ.get("SPEEDIT_NATIVE_DECODE") == "1" else RunnerBF16)(self.g,Store(self.g,cache))
         self.lock=threading.Lock()
         self.ids={c:self.t.encode(c)[0] for c in LABELS+'N'}
     def select(self, text, chunks, role):

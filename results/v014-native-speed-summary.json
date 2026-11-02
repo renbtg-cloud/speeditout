@@ -1,0 +1,32 @@
+{
+  "model": "Qwen3-1.7B-Q4_K_M.gguf",
+  "verified_sha256": "d2387ca2dbfee2ffabce7120d3770dadca0b293052bc2f0e138fdc940d9bc7b5",
+  "trial": "1 matched CPU generation per backend; insufficient for confidence intervals",
+  "results": [
+    {
+      "mode": "native",
+      "elapsed_s": 91.345,
+      "prompt_prefill_s": 35.3,
+      "tokens": 16,
+      "prefill_excluded_s": 31.0,
+      "decode_layer_median_s": 0.8,
+      "decode_layer_max_s": 15.1,
+      "output_prefix": "{\"reported\":\"responda amanhã\",\"direct\":\"Meu supervisor an",
+      "output_valid_json": false
+    },
+    {
+      "mode": "bf16",
+      "elapsed_s": 131.72,
+      "prompt_prefill_s": 12.8,
+      "tokens": 16,
+      "prefill_excluded_s": 71.7,
+      "decode_layer_median_s": 4.0,
+      "decode_layer_max_s": 14.2,
+      "output_prefix": "{\"reported\":\"responda amanhã\",\"direct\":\"Meu supervisor an",
+      "output_valid_json": false
+    }
+  ],
+  "relative_walltime_reduction": 0.3065,
+  "same_prefix": true,
+  "qualification": "Both were capped at 16 tokens and produced incomplete JSON. Native is not llama.cpp; CPU contention and startup differences affect elapsed times."
+}

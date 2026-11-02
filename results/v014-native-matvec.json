@@ -1,0 +1,68 @@
+{
+  "model_bytes": 1282439264,
+  "total": 6,
+  "failed": 0,
+  "passed": 6,
+  "items": [
+    {
+      "tensor": "blk.0.attn_q.weight",
+      "kind": 12,
+      "rows": 2048,
+      "cols": 2048,
+      "passed": true,
+      "max_absolute_error": 3.039836883544922e-06,
+      "relative_l2_error": 4.043418186938652e-07,
+      "median_ms": 3.661993499918026
+    },
+    {
+      "tensor": "blk.0.attn_k.weight",
+      "kind": 12,
+      "rows": 1024,
+      "cols": 2048,
+      "passed": true,
+      "max_absolute_error": 2.1457672119140625e-06,
+      "relative_l2_error": 3.896016949056502e-07,
+      "median_ms": 7.984041999975489
+    },
+    {
+      "tensor": "blk.0.ffn_gate.weight",
+      "kind": 12,
+      "rows": 6144,
+      "cols": 2048,
+      "passed": true,
+      "max_absolute_error": 4.291534423828125e-06,
+      "relative_l2_error": 5.814239898427331e-07,
+      "median_ms": 16.21735950004677
+    },
+    {
+      "tensor": "blk.0.ffn_down.weight",
+      "kind": 14,
+      "rows": 2048,
+      "cols": 6144,
+      "passed": true,
+      "max_absolute_error": 4.291534423828125e-06,
+      "relative_l2_error": 4.7000372660477296e-07,
+      "median_ms": 25.093592500070372
+    },
+    {
+      "tensor": "blk.13.attn_q.weight",
+      "kind": 12,
+      "rows": 2048,
+      "cols": 2048,
+      "passed": true,
+      "max_absolute_error": 3.337860107421875e-06,
+      "relative_l2_error": 3.7398447716441297e-07,
+      "median_ms": 7.9944250001062755
+    },
+    {
+      "tensor": "blk.27.ffn_up.weight",
+      "kind": 12,
+      "rows": 6144,
+      "cols": 2048,
+      "passed": true,
+      "max_absolute_error": 3.635883331298828e-06,
+      "relative_l2_error": 4.4939818621969607e-07,
+      "median_ms": 20.152058500116254
+    }
+  ]
+}

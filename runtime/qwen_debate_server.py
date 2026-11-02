@@ -16,6 +16,7 @@ import time
 from gguf_qwen3_experimental import GGUF, Store, Tokenizer
 from eval_choice_model import enc_chat
 from compute_backends import RunnerBF16
+from compute_native import RunnerNativeDecode
 
 INSTRUCTIONS = '''Você analisa quem está falando e quem está pedindo ação.
 Produza JSON compacto, sem markdown, exatamente 3 campos:
@@ -38,7 +39,7 @@ class Generator:
     def __init__(self, model, cache, limit):
         self.gguf=GGUF(model)
         self.tok=Tokenizer(self.gguf.meta)
-        self.run=RunnerBF16(self.gguf, Store(self.gguf,cache))
+        self.run=(RunnerNativeDecode if os.environ.get("SPEEDIT_NATIVE_DECODE") == "1" else RunnerBF16)(self.gguf, Store(self.gguf,cache))
         self.end_id=self.tok.ids.get('<|im_end|>')
         self.limit=limit
         self.lock=threading.Lock()

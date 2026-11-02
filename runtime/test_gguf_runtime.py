@@ -6,7 +6,7 @@ from gguf_qwen3_experimental import GGUF,Tokenizer,dequant_q4k,dequant_q6k
 class GGUFTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.g=GGUF(os.environ.get('SPITITOUT_GGUF','/mnt/data/Qwen3-1.7B-Q4_K_M.gguf'));cls.t=Tokenizer(cls.g.meta)
+  cls.g=GGUF(os.environ.get('SPEEDIT_GGUF',os.environ.get('SPITITOUT_GGUF','/mnt/data/Qwen3-1.7B-Q4_K_M.gguf')));cls.t=Tokenizer(cls.g.meta)
  def test_architecture(self):
   self.assertEqual(self.g.meta['general.architecture'],'qwen3')
   self.assertEqual(self.g.meta['qwen3.block_count'],28)
