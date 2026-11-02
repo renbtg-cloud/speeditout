@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.13.0**. It is
+This repository holds the working prototype up through **v0.14.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -66,3 +66,25 @@ research, not general reasoning; the Qwen selected span IDs rather than writing
 free text, and the complete live model trial timed out.
 See [EXPERIMENT-V013.md](EXPERIMENT-V013.md) for failures, reproducibility and
 the partially recorded real-model trial.
+
+## v0.14 research status
+
+This iteration adds optional CPU direct-quantized matvec for single-token GGUF
+inference, model-SHA-keyed conversion caches, bounded/strict JSON from local
+model endpoints, per-case regression snapshots, and evaluation observability.
+It **does not** replace the v0.13 default model profile or claim a new general
+reasoning model. See [EXPERIMENT-V014.md](EXPERIMENT-V014.md) for measured
+results and limitations, and [docs/CPU-INFERENCE.md](docs/CPU-INFERENCE.md)
+for CPU/Windows reproduction.
+
+For quick Go-only checks on Linux or Git Bash:
+
+```sh
+bash scripts/verify.sh
+```
+
+The Windows/Git Bash llama.cpp installer, launcher and benchmark scripts live
+in [`tools/windows-llama/`](tools/windows-llama/). They have not been executed
+on an actual Windows host in this experiment. CI includes Linux and Windows
+build/test jobs; a committed workflow is not evidence that GitHub Actions
+has executed successfully.
