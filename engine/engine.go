@@ -99,6 +99,9 @@ func (e *Engine) InterpretContext(c context.Context, req Request) Outcome {
 	if original == "" {
 		return out("clarify", "unknown", "Não ouvi ou recebi nenhuma mensagem. Pode tentar de novo?", "low", "empty_input")
 	}
+	if v, ok := authorityPreflight(req); ok {
+		return v
+	}
 	if v, ok := semanticInterpret(req); ok {
 		// Semantic guardrails are evaluated before legacy lexical shortcuts.
 		if v.Intent == "defer_work" && v.Decision == "propose_draft" {
