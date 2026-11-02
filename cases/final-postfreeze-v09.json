@@ -1,0 +1,458 @@
+[
+  {
+    "id": "F09-001",
+    "group": "child",
+    "text": "Tô fora, esse jogo não é para mim.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-002",
+    "group": "child",
+    "text": "Já cansei disso, chega de brincar.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-003",
+    "group": "child",
+    "text": "Achei o jogo péssimo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-004",
+    "group": "child",
+    "text": "Isso não tem a menor graça.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-005",
+    "group": "child",
+    "text": "Não consigo entender a primeira etapa.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-006",
+    "group": "child",
+    "text": "Como faz isso? Não compreendi.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-007",
+    "group": "child",
+    "text": "Eu me perdi quando você começou a explicar.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-008",
+    "group": "child",
+    "text": "Me ajuda com essa regra, tô confuso.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-009",
+    "group": "child",
+    "text": "Minha irmã não gostou da brincadeira, mas eu quero continuar.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-010",
+    "group": "child",
+    "text": "A colega falou que era chato, mas eu gostei.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-011",
+    "group": "child",
+    "text": "Não gostei só da música, o resto está ótimo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-012",
+    "group": "child",
+    "text": "Será que ele achou isso chato?",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-013",
+    "group": "relationships",
+    "text": "A menina não me responde, fiz uma besteira.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-014",
+    "group": "relationships",
+    "text": "Ele sumiu depois de uma briga e acho que a culpa foi minha.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-015",
+    "group": "relationships",
+    "text": "Minha amiga me deixou no vácuo; eu vacilei.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-016",
+    "group": "relationships",
+    "text": "Fiquei sem resposta, devo ter magoado alguém.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-017",
+    "group": "relationships",
+    "text": "O que quer dizer ghosting?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-018",
+    "group": "relationships",
+    "text": "Pode definir ghosting?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-019",
+    "group": "relationships",
+    "text": "Minha avó levou um gelo e ficou triste.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-020",
+    "group": "relationships",
+    "text": "Ela disse que eu merecia o vácuo, mas discordo.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-021",
+    "group": "relationships",
+    "text": "O rapaz ignorou minha irmã porque brigaram.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-022",
+    "group": "relationships",
+    "text": "Meu papagaio sumiu da gaiola.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-023",
+    "group": "relationships",
+    "text": "Fui ignorado, mas não acho que foi minha culpa.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-024",
+    "group": "relationships",
+    "text": "É verdade que todo ghosting é proposital?",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-025",
+    "group": "work",
+    "text": "Redija uma mensagem ao gestor dizendo que retomo isso amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-026",
+    "group": "work",
+    "text": "Escreve ao chefe que só vejo o problema na segunda-feira.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-027",
+    "group": "work",
+    "text": "Avise o supervisor: amanhã eu examino essa solicitação.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-028",
+    "group": "work",
+    "text": "Prepara uma resposta para o diretor que volto a avaliar segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-029",
+    "group": "work",
+    "text": "Prepare um email, mas não garanta data nenhuma.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-030",
+    "group": "work",
+    "text": "Escreva para o gestor sem mencionar prazo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-031",
+    "group": "work",
+    "text": "Responda ao chefe sem inventar outra data.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-032",
+    "group": "work",
+    "text": "Não pretendo me comprometer com segunda, redija algo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-033",
+    "group": "work",
+    "text": "Não prepare mensagem para ninguém, preciso desabafar.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-034",
+    "group": "work",
+    "text": "Só vou reclamar desse email, sem resposta por enquanto.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "F09-035",
+    "group": "work",
+    "text": "O chefe disse que vai avaliar isso na segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-036",
+    "group": "work",
+    "text": "Você acha prudente responder na segunda?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-037",
+    "group": "mechanic",
+    "text": "Quando aperto o acelerador, o carro perde força.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-038",
+    "group": "mechanic",
+    "text": "O motor rateia quando fica quente.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-039",
+    "group": "mechanic",
+    "text": "Depois da viagem o carro começa a vibrar.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-040",
+    "group": "mechanic",
+    "text": "Há um ruído metálico na primeira partida.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "F09-041",
+    "group": "mechanic",
+    "text": "Minha tia contou que o veículo falha, mas nunca vi.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-042",
+    "group": "mechanic",
+    "text": "Foi um cliente que relatou o engasgo do motor.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-043",
+    "group": "mechanic",
+    "text": "Minha vizinha acha que o motor vibra; não conferi.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-044",
+    "group": "mechanic",
+    "text": "Esse sintoma era só uma hipótese de exercício.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-045",
+    "group": "mechanic",
+    "text": "Agora o carro já não perde força.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-046",
+    "group": "mechanic",
+    "text": "Não está mais engasgando, arrumei tudo.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-047",
+    "group": "mechanic",
+    "text": "Desde ontem o motor não falha mais.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "F09-048",
+    "group": "mechanic",
+    "text": "O carro nunca falhou; era uma situação imaginária.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  }
+]

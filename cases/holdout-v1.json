@@ -1,0 +1,263 @@
+[
+  {
+    "id": "H01",
+    "text": "Pô, esse joguinho não me anima nem um pouco.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H02",
+    "text": "Não saquei o que a gente tem que fazer.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H03",
+    "text": "Minha irmã detestou aquele jogo ontem.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H04",
+    "text": "Eu queria inventar outra brincadeira.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H05",
+    "text": "Eu tô falando que a tua ideia foi sem graça.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H06",
+    "text": "Foi a professora que disse que isso era chato.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H07",
+    "text": "A pessoa que eu curtia me bloqueou do nada. Acho que a culpa foi minha.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H08",
+    "text": "Ficou um silêncio total depois da minha mensagem. Devo ter estragado tudo.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H09",
+    "text": "O que quer dizer a palavra ghosting?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H10",
+    "text": "Meu cachorro desapareceu e acho que fui irresponsável.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H11",
+    "text": "Minha amiga levou ghosting e disse que mereceu.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H12",
+    "text": "Levei um bolo. Acho que mereci.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H13",
+    "text": "Escreve pro meu supervisor dizendo que vou ver isso segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H14",
+    "text": "Por favor, avise meu diretor que só posso analisar segunda-feira.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H15",
+    "text": "Meu gestor pediu urgência. Escreve que retorno na segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H16",
+    "text": "Chefe quer o relatório agora. Não quero mandar mensagem nenhuma. Segunda eu vejo.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H17",
+    "text": "Responda pro chefe que segunda não serve e não prometa data.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H18",
+    "text": "Fala pro meu chefe: não quero dizer segunda, só quando eu tiver certeza.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H19",
+    "text": "O chefe me perguntou se posso fazer até segunda?",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H20",
+    "text": "Não responda o email, tô só desabafando, caralho.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H21",
+    "text": "Não quero que você mude minhas palavras. Responda pro chefe exatamente: \"Vai se foder\".",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H22",
+    "text": "Mande uma mensagem para a minha mãe, falo com ela segunda.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H23",
+    "text": "Na oficina, o carro dá uns trancos quando eu piso e esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H24",
+    "text": "O carro começa a tremer depois de rodar meia hora.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H25",
+    "text": "O motor não falha, só a bateria descarrega.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H26",
+    "text": "Tá batendo pino em subida quando esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "H27",
+    "text": "Não foi isso que eu quis dizer.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H28",
+    "text": "Quero aprender violino.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "H29",
+    "text": "Nem vou mentir, o jogo é horrível.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "H30",
+    "text": "Sua explicação foi confusa, tenta de outro jeito.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  }
+]

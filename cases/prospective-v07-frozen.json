@@ -1,0 +1,428 @@
+[
+  {
+    "id": "V001",
+    "text": "Achei essa brincadeira repetitiva e sem surpresa.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V002",
+    "text": "Não consigo seguir seu raciocínio, estou perdido.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V003",
+    "text": "Minha prima achou a brincadeira boba, mas eu gostei.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V004",
+    "text": "Ela disse que detestou o jogo e eu achei legal.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V005",
+    "text": "Não gostei da trilha sonora, mas gostei do jogo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V006",
+    "text": "O jogo é chato? Talvez pra algumas pessoas.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V007",
+    "text": "Esse negócio de repetir números não tá me divertindo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V008",
+    "text": "Você explicou três vezes e não consegui entender.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V009",
+    "text": "Meu colega disse que não entendeu, eu entendi.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V010",
+    "text": "Eu gostei sim, só tô com sono.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V011",
+    "text": "Minha mãe não gostou, eu achei massa.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V012",
+    "text": "Tô perdido; explica de outro jeito.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V013",
+    "text": "Ela desapareceu depois que eu mandei aquela mensagem; acho que fui cruel.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V014",
+    "text": "Acho que eu estraguei tudo. Ela parou de falar comigo.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V015",
+    "text": "Meu amigo se culpa porque a garota parou de responder.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V016",
+    "text": "O cachorro sumiu e me sinto culpado.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V017",
+    "text": "Me deu vácuo, mas tô de boa.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V018",
+    "text": "Você pode explicar por que as pessoas dão ghosting?",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V019",
+    "text": "Fiquei falando sozinho no chat. Acho que eu magoei a pessoa.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V020",
+    "text": "O grupo parou de responder e ela acha que foi culpa dela.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V021",
+    "text": "Prepara um email para meu gerente dizendo que reviso na segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V022",
+    "text": "O chefe mandou revisar o arquivo hoje; não redija resposta, quero pensar.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V023",
+    "text": "Meu diretor pediu resposta hoje, mas eu quero deixar pra amanhã. Escreva.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V024",
+    "text": "Escreva para o chefe sem prometer que resolvo na segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V025",
+    "text": "Meu supervisor disse que só vai responder na segunda, mas eu preciso hoje.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V026",
+    "text": "Posso deixar a resposta pro diretor para semana que vem?",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V027",
+    "text": "Não escreva para o chefe por enquanto; estou apenas desabafando.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V028",
+    "text": "Não quero mandar o email ao gerente, deixa quieto.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V029",
+    "text": "Ela disse que o diretor vai esperar segunda, não fui eu.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V030",
+    "text": "Avisa ao meu chefe que retorno amanhã.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V031",
+    "text": "O chefe pediu para eu não responder agora; eu quero discutir isso contigo.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V032",
+    "text": "Quero que você redija algo dizendo que não posso me comprometer com segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V033",
+    "text": "A caminhonete perde força quando subo um morro.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V034",
+    "text": "A frio o carro dá umas cabeçadas, quando aquece melhora.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V035",
+    "text": "Motor não falha; é o suporte do escapamento que treme.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V036",
+    "text": "Meu tio disse que o motor morre, mas nunca verifiquei.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V037",
+    "text": "Ao acelerar, parece que o carro demora a responder.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V038",
+    "text": "O barulho metálico aparece só na segunda marcha.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "V039",
+    "text": "O motor falhava antes, mas troquei velas e agora não.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V040",
+    "text": "Foi o mecânico quem disse que o motor engasga, não eu.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V041",
+    "text": "Minha filha acha o jogo sem graça, mas eu adoro.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V042",
+    "text": "Isso não é uma rejeição; estou te contando a opinião do meu primo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V043",
+    "text": "Você falou que eu não entendi, mas entendi sim.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V044",
+    "text": "Me deixa em paz agora, eu não quero brincar.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V045",
+    "text": "Aquele cara me bloqueou e eu acho que fiz algo horrível.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "V046",
+    "text": "Ela disse que levou ghosting e mereceu.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V047",
+    "text": "Meu chefe disse que só pode segunda. Você acha razoável?",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "V048",
+    "text": "Redija ao gerente que amanhã não consigo, sem inventar outro prazo.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  }
+]

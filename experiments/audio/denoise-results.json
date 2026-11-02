@@ -1,0 +1,30 @@
+{
+  "method": "espeak synthetic Portuguese speech + seeded additive Gaussian noise, ffmpeg afftdn; SI-SDR aligned within 100 ms",
+  "results": [
+    {
+      "condition": "white_-5db",
+      "before_si_sdr_db": -5.009,
+      "after_si_sdr_db": -4.831,
+      "delta_db": 0.178,
+      "delay_before_samples": 0,
+      "delay_after_samples": 400
+    },
+    {
+      "condition": "white_+0db",
+      "before_si_sdr_db": 0.003,
+      "after_si_sdr_db": 0.559,
+      "delta_db": 0.556,
+      "delay_before_samples": 0,
+      "delay_after_samples": 400
+    },
+    {
+      "condition": "white_+5db",
+      "before_si_sdr_db": 4.987,
+      "after_si_sdr_db": 6.654,
+      "delta_db": 1.667,
+      "delay_before_samples": 0,
+      "delay_after_samples": 400
+    }
+  ],
+  "limits": "Not measured with real noisy conversations, phones, or ASR. SI-SDR is not word error rate. Enhancement may remove speech. No vendor engine evaluated."
+}

@@ -1,0 +1,1401 @@
+[
+  {
+    "id": "work_monday-001",
+    "group": "work_monday",
+    "text": "Fala pro meu chefe tomar no cu, ele espera até segunda!",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-002",
+    "group": "work_monday",
+    "text": "O chefe quer o e-mail urgente. Deixa pra segunda, porra!",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-003",
+    "group": "work_monday",
+    "text": "Meu boss pediu urgente, ele pode esperar até segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-004",
+    "group": "work_monday",
+    "text": "Ele pode esperar até segunda, caralho.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-005",
+    "group": "work_monday",
+    "text": "Vou olhar segunda, diga pro chefe.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-006",
+    "group": "work_monday",
+    "text": "Não hoje, chefe! Só segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-007",
+    "group": "work_monday",
+    "text": "Gerente pediu isso agora. Fica para segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-008",
+    "group": "work_monday",
+    "text": "Que saco, não vou responder hoje. Segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-009",
+    "group": "work_monday",
+    "text": "Escreva para o meu chefe: só vejo na segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-010",
+    "group": "work_monday",
+    "text": "Tell him to fuck off, pode esperar até segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-011",
+    "group": "work_monday",
+    "text": "PQP, preciso deixar isso pra segunda e responder ao gestor.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_monday-012",
+    "group": "work_monday",
+    "text": "Responda ao email do diretor que vou retomar na segunda.",
+    "context": {
+      "domain": "work",
+      "recipient": "boss"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": [
+      "tomar no cu",
+      "fuck off",
+      "caralho",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_tomorrow-013",
+    "group": "work_tomorrow",
+    "text": "Preciso responder ao chefe só amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_tomorrow-014",
+    "group": "work_tomorrow",
+    "text": "Fica para amanhã essa solicitação de trabalho.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_tomorrow-015",
+    "group": "work_tomorrow",
+    "text": "Amanhã eu retomo isso. Escreve pro boss.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_tomorrow-016",
+    "group": "work_tomorrow",
+    "text": "Responda ao e-mail que vou analisar amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_tomorrow-017",
+    "group": "work_tomorrow",
+    "text": "Que merda, não hoje, amanhã respondo ao gestor.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_tomorrow-018",
+    "group": "work_tomorrow",
+    "text": "O diretor pode esperar até amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "amanhã"
+    ],
+    "forbidden": [
+      "merda"
+    ]
+  },
+  {
+    "id": "work_unspecified-019",
+    "group": "work_unspecified",
+    "text": "Responda pro chefe que preciso de mais tempo pra analisar.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_unspecified-020",
+    "group": "work_unspecified",
+    "text": "Quero adiar o e-mail do boss.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_unspecified-021",
+    "group": "work_unspecified",
+    "text": "O gestor pode esperar um pouco, preciso revisar isso.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_unspecified-022",
+    "group": "work_unspecified",
+    "text": "Porra, não agora, diga que vou analisar depois.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_unspecified-023",
+    "group": "work_unspecified",
+    "text": "Responda ao email: preciso analisar isso antes de responder.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "work_unspecified-024",
+    "group": "work_unspecified",
+    "text": "Diz pro diretor que preciso de tempo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "tempo"
+    ],
+    "forbidden": [
+      "segunda-feira",
+      "amanhã",
+      "porra"
+    ]
+  },
+  {
+    "id": "literal_quote-025",
+    "group": "literal_quote",
+    "text": "Escreva literalmente \"vai se foder\" para ele.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft",
+    "required": [],
+    "forbidden": []
+  },
+  {
+    "id": "literal_quote-026",
+    "group": "literal_quote",
+    "text": "Sem suavizar: \"vai tomar no cu\", quero a frase literal.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft",
+    "required": [],
+    "forbidden": []
+  },
+  {
+    "id": "literal_quote-027",
+    "group": "literal_quote",
+    "text": "Escreva sem mudar nada \"fuck off\".",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft",
+    "required": [],
+    "forbidden": []
+  },
+  {
+    "id": "literal_quote-028",
+    "group": "literal_quote",
+    "text": "Quero as palavras exatas: \"porra, me deixa em paz\".",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft",
+    "required": [],
+    "forbidden": []
+  },
+  {
+    "id": "literal_missing-029",
+    "group": "literal_missing",
+    "text": "Escreva literalmente vai se foder para ele.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "clarify",
+    "required": [
+      "texto exato"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "literal_missing-030",
+    "group": "literal_missing",
+    "text": "Sem suavizar, mande tomar no cu.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "clarify",
+    "required": [
+      "texto exato"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "literal_missing-031",
+    "group": "literal_missing",
+    "text": "Não ameniza: fala pra ele ir se foder.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "clarify",
+    "required": [
+      "texto exato"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mechanic-032",
+    "group": "mechanic",
+    "text": "O carro engasga quando piso fundo depois que esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-033",
+    "group": "mechanic",
+    "text": "Essa joça rateia quando acelero, só depois que esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-034",
+    "group": "mechanic",
+    "text": "Piso fundo e o motor engasga quando esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-035",
+    "group": "mechanic",
+    "text": "O carro perde força na subida.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-036",
+    "group": "mechanic",
+    "text": "O motor morre em marcha lenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-037",
+    "group": "mechanic",
+    "text": "Meu carro falha com motor quente.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-038",
+    "group": "mechanic",
+    "text": "O motor dá umas pipocadas quando acelero.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-039",
+    "group": "mechanic",
+    "text": "A caranga afoga quando piso fundo.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-040",
+    "group": "mechanic",
+    "text": "O carro vibra depois que esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-041",
+    "group": "mechanic",
+    "text": "O trem rateia quando tá quente.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "mechanic-042",
+    "group": "mechanic",
+    "text": "O carro engasga quando está frio.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "Sintoma relatado",
+      "não identifica a causa"
+    ],
+    "forbidden": [
+      "trocar a bomba",
+      "vela defeituosa",
+      "sensor quebrado"
+    ]
+  },
+  {
+    "id": "child_rejection-043",
+    "group": "child_rejection",
+    "text": "Muito chato.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-044",
+    "group": "child_rejection",
+    "text": "Não gostei.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-045",
+    "group": "child_rejection",
+    "text": "Não quero brincar disso.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-046",
+    "group": "child_rejection",
+    "text": "Esse jogo é bobo.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-047",
+    "group": "child_rejection",
+    "text": "Que saco, sem graça.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-048",
+    "group": "child_rejection",
+    "text": "Nada a ver.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-049",
+    "group": "child_rejection",
+    "text": "Esse jogo tá ruim.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_rejection-050",
+    "group": "child_rejection",
+    "text": "Muito fácil.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "não gostou, né?"
+    ],
+    "forbidden": [
+      "outro jogo",
+      "dinossauro",
+      "que tal"
+    ]
+  },
+  {
+    "id": "child_confusion-051",
+    "group": "child_confusion",
+    "text": "Não entendi.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "expliquei mal"
+    ],
+    "forbidden": [
+      "outro jogo"
+    ]
+  },
+  {
+    "id": "child_confusion-052",
+    "group": "child_confusion",
+    "text": "Não saquei.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "expliquei mal"
+    ],
+    "forbidden": [
+      "outro jogo"
+    ]
+  },
+  {
+    "id": "child_confusion-053",
+    "group": "child_confusion",
+    "text": "Que que é isso?",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "expliquei mal"
+    ],
+    "forbidden": [
+      "outro jogo"
+    ]
+  },
+  {
+    "id": "child_confusion-054",
+    "group": "child_confusion",
+    "text": "Tô boiando.",
+    "context": {
+      "situation": "offered_game",
+      "age_band": "child"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "expliquei mal"
+    ],
+    "forbidden": [
+      "outro jogo"
+    ]
+  },
+  {
+    "id": "teen_ghosting-055",
+    "group": "teen_ghosting",
+    "text": "Levei um ghosting. Acho que mereci.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-056",
+    "group": "teen_ghosting",
+    "text": "Ela me deu ghosting. Foi culpa minha.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-057",
+    "group": "teen_ghosting",
+    "text": "Tomei um ghosting, eu vacilei.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-058",
+    "group": "teen_ghosting",
+    "text": "Ele sumiu. Eu fiz merda.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-059",
+    "group": "teen_ghosting",
+    "text": "Me deixou no vácuo, eu fui babaca.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-060",
+    "group": "teen_ghosting",
+    "text": "Parou de responder. Eu errei.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "teen_ghosting-061",
+    "group": "teen_ghosting",
+    "text": "Ela me ignorou, acho que mereci isso.",
+    "context": {
+      "age_band": "teen"
+    },
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Por que você acha"
+    ],
+    "forbidden": [
+      "ninguém merece",
+      "você tem valor",
+      "ela é tóxica"
+    ]
+  },
+  {
+    "id": "unknown-062",
+    "group": "unknown",
+    "text": "O dia está bonito hoje.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-063",
+    "group": "unknown",
+    "text": "Segunda-feira é feriado, será?",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-064",
+    "group": "unknown",
+    "text": "Putz, a bateria morreu.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-065",
+    "group": "unknown",
+    "text": "Meu tio sumiu ontem.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-066",
+    "group": "unknown",
+    "text": "Acho que mereci um prêmio.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-067",
+    "group": "unknown",
+    "text": "Não sei, cara.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-068",
+    "group": "unknown",
+    "text": "Explica essa fotografia.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-069",
+    "group": "unknown",
+    "text": "Aquele carro é lindo.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-070",
+    "group": "unknown",
+    "text": "Quero inventar meu próprio jogo.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "unknown-071",
+    "group": "unknown",
+    "text": "Você acha que todos os chefes são ruins?",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": [
+      "segunda-feira e retorno",
+      "Sintoma relatado"
+    ]
+  },
+  {
+    "id": "work_date_not_intent-072",
+    "group": "work_date_not_intent",
+    "text": "Segunda-feira é feriado, será?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "work_date_not_intent-073",
+    "group": "work_date_not_intent",
+    "text": "Chefe pediu férias na segunda",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "work_question-074",
+    "group": "work_question",
+    "text": "Meu chefe pode esperar até segunda?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify",
+    "required": [
+      "prazo"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "work_question-075",
+    "group": "work_question",
+    "text": "Será que eu devo deixar isso pra segunda?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify",
+    "required": [
+      "prazo"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "work_negated_literal-076",
+    "group": "work_negated_literal",
+    "text": "Não escreva literalmente 'vai se foder'; diga que fica pra segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft",
+    "required": [
+      "segunda-feira"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "work_contextless-077",
+    "group": "work_contextless",
+    "text": "Ele espera até segunda",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mech_negated-078",
+    "group": "mech_negated",
+    "text": "O carro não engasga quando piso fundo.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify",
+    "required": [
+      "negação"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mech_negated-079",
+    "group": "mech_negated",
+    "text": "Não rateia, só perde força em subida",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify",
+    "required": [
+      "negação"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mech_negated_temp-080",
+    "group": "mech_negated_temp",
+    "text": "O motor engasga; não é depois que esquenta, é frio",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft",
+    "required": [
+      "motor frio"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "child_no_inference-081",
+    "group": "child_no_inference",
+    "text": "Não quero brincar disso",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "child_no_inference-082",
+    "group": "child_no_inference",
+    "text": "Não entendi",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify",
+    "required": [
+      "contexto"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "teen_definition-083",
+    "group": "teen_definition",
+    "text": "Levei um ghosting, pode explicar o termo?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait",
+    "required": [
+      "Ghosting é"
+    ],
+    "forbidden": []
+  }
+]

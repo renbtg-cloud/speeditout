@@ -1,0 +1,578 @@
+[
+  {
+    "id": "P09-001",
+    "group": "child",
+    "text": "Esse jogo ficou cansativo, quero terminar.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-002",
+    "group": "child",
+    "text": "Prefiro brincar de uma coisa diferente.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-003",
+    "group": "child",
+    "text": "Chega dessa brincadeira para mim.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-004",
+    "group": "child",
+    "text": "Eu detestei esse jogo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "reject_game",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-005",
+    "group": "child",
+    "text": "Não consegui acompanhar as regras, explica?",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-006",
+    "group": "child",
+    "text": "Estou sem entender como começa.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-007",
+    "group": "child",
+    "text": "Qual é a regra mesmo? Me perdi.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-008",
+    "group": "child",
+    "text": "Tenta explicar mais fácil porque fiquei confuso.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "did_not_understand",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-009",
+    "group": "child",
+    "text": "Meu colega achou chato, eu não.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-010",
+    "group": "child",
+    "text": "Minha tia falou que não gostou, eu adorei.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-011",
+    "group": "child",
+    "text": "Esse jogo é chato para todo mundo?",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-012",
+    "group": "child",
+    "text": "Eu gostei, mas minha amiga disse que é péssimo.",
+    "context": {
+      "situation": "offered_game"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-013",
+    "group": "relationship",
+    "text": "Ela me deu gelo depois que eu agi mal.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-014",
+    "group": "relationship",
+    "text": "Ninguém responde minhas mensagens, e acho que estraguei as coisas.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-015",
+    "group": "relationship",
+    "text": "Ele me deixou falando sozinho; talvez eu tenha sido injusto.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-016",
+    "group": "relationship",
+    "text": "Tomei um vácuo e sinto que pisei na bola.",
+    "context": {},
+    "expected_intent": "ghosting_self_blame",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-017",
+    "group": "relationship",
+    "text": "Pode explicar o significado de ghosting?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-018",
+    "group": "relationship",
+    "text": "Qual a definição de ghosting?",
+    "context": {},
+    "expected_intent": "define_ghosting",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-019",
+    "group": "relationship",
+    "text": "Meu irmão disse que recebeu ghosting e ficou triste.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-020",
+    "group": "relationship",
+    "text": "Ela afirmou que eu merecia levar ghosting, mas discordo.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-021",
+    "group": "relationship",
+    "text": "Meu cachorro desapareceu e estou aflito.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-022",
+    "group": "relationship",
+    "text": "Minha amiga foi ignorada e diz que foi culpa dela.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-023",
+    "group": "relationship",
+    "text": "Alguém comentou que ghosting é ruim.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-024",
+    "group": "relationship",
+    "text": "Ele não me responde, mas não acho que fiz nada errado.",
+    "context": {},
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-025",
+    "group": "work",
+    "text": "Por favor redija ao supervisor dizendo que só avaliarei na segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-026",
+    "group": "work",
+    "text": "Escreva uma resposta ao diretor: amanhã verifico isso.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-027",
+    "group": "work",
+    "text": "Avise ao chefe que vou olhar esse assunto na segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-028",
+    "group": "work",
+    "text": "Manda um email dizendo que retomo na segunda-feira.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-029",
+    "group": "work",
+    "text": "Redija para o chefe, mas sem prometer segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-030",
+    "group": "work",
+    "text": "Escreva ao gerente sem assumir data alguma.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-031",
+    "group": "work",
+    "text": "Responda sem indicar qualquer prazo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-032",
+    "group": "work",
+    "text": "Não quero fixar data nesse email. Redija sem prazo.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-033",
+    "group": "work",
+    "text": "Não escreva resposta; só estou desabafando.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-034",
+    "group": "work",
+    "text": "Não faça rascunho nenhum pro diretor.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-035",
+    "group": "work",
+    "text": "Por enquanto não mande nem prepare mensagem.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-036",
+    "group": "work",
+    "text": "Só quero reclamar do gestor, nada de email.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P09-037",
+    "group": "work",
+    "text": "Meu chefe disse que ele responderá segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-038",
+    "group": "work",
+    "text": "O supervisor garantiu para todos que seria amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-039",
+    "group": "work",
+    "text": "Meu pai disse que o gerente vai responder segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-040",
+    "group": "work",
+    "text": "Será que seria razoável adiar para segunda?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-041",
+    "group": "work",
+    "text": "Na sua opinião devo responder amanhã?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-042",
+    "group": "work",
+    "text": "Manda pro chefe exatamente: \"Vai se foder\"",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-043",
+    "group": "work",
+    "text": "Transmita essas palavras exatas: \"Vai se foder\"",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "literal_message",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-044",
+    "group": "work",
+    "text": "Não escreva literalmente \"vai se foder\"; avise que volto segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-045",
+    "group": "mechanic",
+    "text": "O motor perde potência nas subidas.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-046",
+    "group": "mechanic",
+    "text": "Meu carro dá tranco quando acelero.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-047",
+    "group": "mechanic",
+    "text": "Ao pisar no acelerador, o motor corta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-048",
+    "group": "mechanic",
+    "text": "O veículo dá umas falhadas depois que esquenta.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "technical_symptom",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P09-049",
+    "group": "mechanic",
+    "text": "A vizinha disse que o motor falha, não testei.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-050",
+    "group": "mechanic",
+    "text": "Meu primo contou que o carro vibra, eu não vi.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-051",
+    "group": "mechanic",
+    "text": "Um cliente relatou que perde potência, ainda não examinei.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-052",
+    "group": "mechanic",
+    "text": "Minha irmã falou que o carro engasga, não confirmei.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-053",
+    "group": "mechanic",
+    "text": "O motor não perde potência mais.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-054",
+    "group": "mechanic",
+    "text": "Resolvi o defeito, não vibra mais.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-055",
+    "group": "mechanic",
+    "text": "O carro já não falha desde o reparo.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-056",
+    "group": "mechanic",
+    "text": "Não está engasgando depois do conserto.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "ambiguous_symptom",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-057",
+    "group": "mechanic",
+    "text": "Na aula inventamos uma falha hipotética no motor.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-058",
+    "group": "mechanic",
+    "text": "Não é um defeito mecânico, estou falando do rádio.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-059",
+    "group": "mechanic",
+    "text": "Motor não apresenta nenhum sintoma, era só um exemplo.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P09-060",
+    "group": "mechanic",
+    "text": "O carro não está falhando, só citei um possível cenário.",
+    "context": {
+      "domain": "auto_mechanics"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  }
+]
