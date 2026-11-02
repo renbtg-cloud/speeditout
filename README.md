@@ -6,13 +6,13 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.10.0**. It is
+This repository holds the working prototype up through **v0.11.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
 
 - Go HTTP interpretation engine with deterministic fallback, bounded semantic
-  evidence frames, and explicit limits on what the model can decide.
+  evidence frames, attribution/quotation guards, and explicit limits on what the model can decide.
 - Optional experimental Qwen3 1.7B GGUF inference bridge; the weights are not
   bundled, and the experimental Python/PyTorch runtime is not optimized.
 - Per-user communication preferences and correction handling.
@@ -41,6 +41,7 @@ curl -fsS http://127.0.0.1:18761/v1/interpret \
 
 For audio assessment, see [docs/AUDIO-ADAPTATION.md](docs/AUDIO-ADAPTATION.md)
 and [EXPERIMENT-V010.md](EXPERIMENT-V010.md).
+See [EXPERIMENT-V011.md](EXPERIMENT-V011.md) for the new authority-scope trial and its unsolved failures.
 
 ## Experimental integrity
 
