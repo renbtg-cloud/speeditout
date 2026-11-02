@@ -1,0 +1,22 @@
+[
+{"id":"V013-001","text":"Hoje no treinamento, a instrutora falou: 'escreva ao cliente que voltaremos segunda'. Estou relatando o exemplo.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-002","text":"Recebi esta ordem do gerente: 'diga ao cliente que respondo amanhã'. Eu não sei se concordo.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-003","text":"A coordenadora observou que alguém deveria mandar um email segunda; tô só te contando.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-004","text":"Meu supervisor anotou literalmente 'responda na segunda' no quadro. Não é um pedido meu.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-005","text":"Li a frase 'escreva ao diretor que eu volto amanhã' num slide de aula.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-006","text":"Minha chefe insiste que eu deveria responder na segunda. Que situação chata.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-007","text":"O cliente me perguntou se eu enviaria a resposta na segunda. Não tenho certeza.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-008","text":"O gerente pediu 'avise a equipe na segunda'. Mas preciso primeiro pensar no assunto.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-009","text":"Meu colega escreveu: 'diga ao chefe que eu volto segunda'. Eu só queria discutir isso.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-010","text":"A gerente pediu que eu respondesse amanhã, e eu só estou desabafando com você.","context":{"domain":"work"},"expected_intent":"do_not_draft","expected_decision":"reply_and_wait"},
+{"id":"V013-011","text":"O professor exemplificou 'mande um email para o gerente segunda'. Eu não pedi email nenhum.","context":{"domain":"work"},"expected_intent":"do_not_draft","expected_decision":"reply_and_wait"},
+{"id":"V013-012","text":"Quero falar sobre o que meu diretor pediu. Não quero rascunho, por favor.","context":{"domain":"work"},"expected_intent":"do_not_draft","expected_decision":"reply_and_wait"},
+{"id":"V013-013","text":"Meu chefe falou que eu deveria responder segunda. Agora escreva para ele dizendo que vou conferir tudo primeiro.","context":{"domain":"work"},"expected_intent":"defer_work","expected_decision":"propose_draft"},
+{"id":"V013-014","text":"A gerente escreveu 'retorne segunda'. Eu decidi: redija para ela que retomarei na segunda.","context":{"domain":"work"},"expected_intent":"defer_work","expected_decision":"propose_draft"},
+{"id":"V013-015","text":"Por favor escreva ao chefe que só volto segunda, apesar do que ele tenha dito.","context":{"domain":"work"},"expected_intent":"defer_work","expected_decision":"propose_draft"},
+{"id":"V013-016","text":"Eu mesmo quero responder a gerente, escreve que vou tratar disso na segunda.","context":{"domain":"work"},"expected_intent":"defer_work","expected_decision":"propose_draft"},
+{"id":"V013-017","text":"Responda ao meu supervisor: vou retomar o assunto na segunda-feira.","context":{"domain":"work"},"expected_intent":"defer_work","expected_decision":"propose_draft"},
+{"id":"V013-018","text":"Se eu pedisse 'escreva ao chefe que volto segunda', você faria isso automaticamente?", "context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"},
+{"id":"V013-019","text":"Você acha que seria adequado eu enviar ao gerente uma promessa para segunda-feira?", "context":{"domain":"work"},"expected_intent":"question_about_work","expected_decision":"clarify"},
+{"id":"V013-020","text":"A assistente ouviu a gerente dizer 'mande a resposta segunda', mas a reunião ainda não acabou.","context":{"domain":"work"},"expected_intent":"unknown","expected_decision":"clarify"}
+]
