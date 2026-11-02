@@ -1,0 +1,146 @@
+[
+  {
+    "id": "P11-001",
+    "text": "Meu supervisor comentou: responda ao diretor segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-002",
+    "text": "A gerente disse pra eu escrever ao cliente amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-003",
+    "text": "O chefe falou \"Responda segunda\". Eu fiquei sem saber o que dizer.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-004",
+    "text": "No exemplo, mande ao chefe que volto segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-005",
+    "text": "Eu deveria responder ao cliente dizendo que volto segunda?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-006",
+    "text": "Meu chefe ordenou uma resposta segunda; só preciso conversar.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P11-007",
+    "text": "A diretora avisou \"mande isso segunda\". Eu queria só desabafar.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P11-008",
+    "text": "O chefe falou pra responder segunda. Agora escreva pro chefe que retorno segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P11-009",
+    "text": "O diretor sugeriu responder amanhã. Mande ao chefe que volto amanhã.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P11-010",
+    "text": "Escreva ao meu diretor que vou retomar esse assunto segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "defer_work",
+    "expected_decision": "propose_draft"
+  },
+  {
+    "id": "P11-011",
+    "text": "O gerente comunicou que devemos responder segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-012",
+    "text": "Minha colega contou que eu teria de escrever uma resposta até segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-013",
+    "text": "No seminário o palestrante falou: avise a chefia que retorna segunda.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "unknown",
+    "expected_decision": "clarify"
+  },
+  {
+    "id": "P11-014",
+    "text": "Ela disse \"escreva pro chefe que volto segunda\". Só quero falar sobre isso.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P11-015",
+    "text": "A chefe me mandou responder amanhã. Eu não quero redigir nada.",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "do_not_draft",
+    "expected_decision": "reply_and_wait"
+  },
+  {
+    "id": "P11-016",
+    "text": "Eu acho que devo responder segunda. O que você sugere?",
+    "context": {
+      "domain": "work"
+    },
+    "expected_intent": "question_about_work",
+    "expected_decision": "clarify"
+  }
+]
