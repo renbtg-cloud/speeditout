@@ -1,0 +1,47 @@
+{
+  "holdout-v1": {
+    "failed": 7,
+    "passed": 23,
+    "total": 30
+  },
+  "holdout-v2": {
+    "failed": 0,
+    "passed": 32,
+    "total": 32
+  },
+  "blind-after-freeze-v07": {
+    "failed": 0,
+    "passed": 64,
+    "total": 64
+  },
+  "blind-after-freeze-v08": {
+    "failed": 0,
+    "passed": 48,
+    "total": 48
+  },
+  "final-postfreeze-v09": {
+    "failed": 13,
+    "passed": 35,
+    "total": 48
+  },
+  "prospective-v07-frozen": {
+    "failed": 0,
+    "passed": 48,
+    "total": 48
+  },
+  "prospective-v09-frozen": {
+    "failed": 0,
+    "passed": 60,
+    "total": 60
+  },
+  "authority-v012-frozen": {
+    "failed": 8,
+    "passed": 24,
+    "total": 32
+  },
+  "authority-v013-frozen": {
+    "failed": 9,
+    "passed": 11,
+    "total": 20
+  }
+}
