@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.11.0**. It is
+This repository holds the working prototype up through **v0.12.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -41,7 +41,7 @@ curl -fsS http://127.0.0.1:18761/v1/interpret \
 
 For audio assessment, see [docs/AUDIO-ADAPTATION.md](docs/AUDIO-ADAPTATION.md)
 and [EXPERIMENT-V010.md](EXPERIMENT-V010.md).
-See [EXPERIMENT-V011.md](EXPERIMENT-V011.md) for the new authority-scope trial and its unsolved failures.
+See [EXPERIMENT-V011.md](EXPERIMENT-V011.md) for the rule-based authority trial and [EXPERIMENT-V012.md](EXPERIMENT-V012.md) for real local Qwen authority ranking (veto-only) and its unsolved failures.
 
 ## Experimental integrity
 
