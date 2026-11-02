@@ -1,0 +1,176 @@
+[
+  {
+    "id": "V013-001",
+    "text": "Hoje no treinamento, a instrutora falou: 'escreva ao cliente que voltaremos segunda'. Estou relatando o exemplo.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 7.35,
+      "spans": [
+        "Hoje no treinamento,",
+        "a instrutora falou:",
+        "'escreva ao cliente que voltaremos segunda'.",
+        "Estou relatando o exemplo."
+      ],
+      "r": "A",
+      "d": "B",
+      "r_logits": {
+        "A": 47.99,
+        "B": 40.36,
+        "C": 39.41,
+        "D": 43.59,
+        "N": 33.88
+      },
+      "d_logits": {
+        "A": 39.37,
+        "B": 52.56,
+        "C": 42.3,
+        "D": 45.09,
+        "N": 34.55
+      },
+      "selected": {
+        "reported": "Hoje no treinamento,",
+        "direct": "a instrutora falou:"
+      }
+    }
+  },
+  {
+    "id": "V013-002",
+    "text": "Recebi esta ordem do gerente: 'diga ao cliente que respondo amanhã'. Eu não sei se concordo.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 7.09,
+      "spans": [
+        "Recebi esta ordem do gerente:",
+        "'diga ao cliente que respondo amanhã'.",
+        "Eu não sei se concordo."
+      ],
+      "r": "A",
+      "d": "B",
+      "r_logits": {
+        "A": 47.27,
+        "B": 44.39,
+        "C": 35.01,
+        "N": 31.43
+      },
+      "d_logits": {
+        "A": 38.4,
+        "B": 50.36,
+        "C": 45.31,
+        "N": 35.1
+      },
+      "selected": {
+        "reported": "Recebi esta ordem do gerente:",
+        "direct": "'diga ao cliente que respondo amanhã'."
+      }
+    }
+  },
+  {
+    "id": "V013-003",
+    "text": "A coordenadora observou que alguém deveria mandar um email segunda; tô só te contando.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 6.08,
+      "spans": [
+        "A coordenadora observou que alguém deveria mandar um email segunda;",
+        "tô só te contando."
+      ],
+      "r": "A",
+      "d": "B",
+      "r_logits": {
+        "A": 52.89,
+        "B": 37.13,
+        "N": 32.01
+      },
+      "d_logits": {
+        "A": 39.78,
+        "B": 55.63,
+        "N": 35.49
+      },
+      "selected": {
+        "reported": "A coordenadora observou que alguém deveria mandar um email segunda;",
+        "direct": "tô só te contando."
+      }
+    }
+  },
+  {
+    "id": "V013-004",
+    "text": "Meu supervisor anotou literalmente 'responda na segunda' no quadro. Não é um pedido meu.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 6.13,
+      "spans": [
+        "Meu supervisor anotou literalmente 'responda na segunda' no quadro.",
+        "Não é um pedido meu."
+      ],
+      "r": "A",
+      "d": "B",
+      "r_logits": {
+        "A": 50.57,
+        "B": 38.02,
+        "N": 32.57
+      },
+      "d_logits": {
+        "A": 39.17,
+        "B": 56.66,
+        "N": 34.6
+      },
+      "selected": {
+        "reported": "Meu supervisor anotou literalmente 'responda na segunda' no quadro.",
+        "direct": "Não é um pedido meu."
+      }
+    }
+  },
+  {
+    "id": "V013-005",
+    "text": "Li a frase 'escreva ao diretor que eu volto amanhã' num slide de aula.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 6.54,
+      "spans": [
+        "Li a frase 'escreva ao diretor que eu volto amanhã' num slide de aula."
+      ],
+      "r": "A",
+      "d": "N",
+      "r_logits": {
+        "A": 54.73,
+        "N": 34.4
+      },
+      "d_logits": {
+        "A": 47.62,
+        "N": 48.13
+      },
+      "selected": {
+        "reported": "Li a frase 'escreva ao diretor que eu volto amanhã' num slide de aula.",
+        "direct": ""
+      }
+    }
+  },
+  {
+    "id": "V013-006",
+    "text": "Minha chefe insiste que eu deveria responder na segunda. Que situação chata.",
+    "evidence_method": "actual local Qwen GGUF next-token logits picked span index (host resolved exact substring)",
+    "qwen": {
+      "sec": 5.96,
+      "spans": [
+        "Minha chefe insiste que eu deveria responder na segunda.",
+        "Que situação chata."
+      ],
+      "r": "A",
+      "d": "B",
+      "r_logits": {
+        "A": 50.78,
+        "B": 37.42,
+        "N": 32.5
+      },
+      "d_logits": {
+        "A": 40.91,
+        "B": 51.73,
+        "N": 34.79
+      },
+      "selected": {
+        "reported": "Minha chefe insiste que eu deveria responder na segunda.",
+        "direct": "Que situação chata."
+      }
+    }
+  }
+]
