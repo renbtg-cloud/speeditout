@@ -1,0 +1,192 @@
+{
+  "comparison_enabled": true,
+  "model_profile": "qwen3-1.7b-evidence",
+  "model_name": "recorded-real-qwen-spans",
+  "baseline": {
+    "total": 6,
+    "failed": 6,
+    "passed": 0,
+    "p50_ms": 0.087,
+    "p95_ms": 0.131,
+    "p99_ms": 0.131,
+    "results": [
+      {
+        "id": "V013-001",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 131,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-002",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 81,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-003",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 87,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-004",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 94,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday"
+        ]
+      },
+      {
+        "id": "V013-005",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 54,
+        "reasons": [
+          "semantic_v09"
+        ]
+      },
+      {
+        "id": "V013-006",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 85,
+        "reasons": [
+          "work_context",
+          "defer_intent",
+          "explicit_monday"
+        ]
+      }
+    ]
+  },
+  "hybrid": {
+    "total": 6,
+    "failed": 5,
+    "passed": 1,
+    "p50_ms": 0.719,
+    "p95_ms": 1.361,
+    "p99_ms": 1.361,
+    "results": [
+      {
+        "id": "V013-001",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "unknown",
+        "actual_decision": "clarify",
+        "correct": true,
+        "latency_microseconds": 1361,
+        "reasons": [
+          "authority_evidence_v013",
+          "opposing_hypotheses_checked",
+          "no_model_grant"
+        ]
+      },
+      {
+        "id": "V013-002",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 671,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-003",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 588,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-004",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 719,
+        "reasons": [
+          "explicit_draft",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-005",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 566,
+        "reasons": [
+          "semantic_v09",
+          "authority_evidence_unproven"
+        ]
+      },
+      {
+        "id": "V013-006",
+        "expected_intent": "unknown",
+        "expected_decision": "clarify",
+        "actual_intent": "defer_work",
+        "actual_decision": "propose_draft",
+        "correct": false,
+        "latency_microseconds": 819,
+        "reasons": [
+          "work_context",
+          "defer_intent",
+          "explicit_monday",
+          "authority_evidence_unproven"
+        ]
+      }
+    ]
+  },
+  "improvements": 1,
+  "regressions": 0,
+  "changed": 1,
+  "notes": [
+    "REPLAY of prior real Qwen choices, no model calls during this Go comparison.",
+    "This is the first 6 cases in a benchmark that timed out. The six are a non-independent prefix and score cannot be extrapolated."
+  ]
+}
