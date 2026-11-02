@@ -204,6 +204,9 @@ func (e *Engine) auditDraft(ctx context.Context, req Request, base Outcome) Outc
 	if e.Model == nil || base.Decision != "propose_draft" || base.Intent != "defer_work" {
 		return base
 	}
+	if e.Model.profile == "qwen3-1.7b-evidence" {
+		return e.auditDraftEvidence(ctx, req, base)
+	}
 	a, err := e.Model.RankAuthority(ctx, req)
 	if err != nil {
 		base.Reasons = append(base.Reasons, "authority_model_unavailable")
