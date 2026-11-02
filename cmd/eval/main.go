@@ -110,7 +110,7 @@ func main() {
 	output := flag.String("out", "", "JSON report path")
 	endpoint := flag.String("local-model-url", "", "optional Ollama-compatible loopback /api/chat endpoint")
 	name := flag.String("local-model-name", "", "model name")
-	profile := flag.String("model-profile", "generic", "generic or qwen3-1.7b")
+	profile := flag.String("model-profile", "generic", "generic, qwen3-1.7b, or qwen3-1.7b-evidence")
 	parallel := flag.Int("model-parallel", 1, "maximum concurrent model calls")
 	timeout := flag.Duration("model-timeout", 10*time.Second, "local model timeout on CPU")
 	flag.Parse()
