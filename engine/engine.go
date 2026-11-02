@@ -76,6 +76,14 @@ func (e *Engine) InterpretContext(c context.Context, req Request) Outcome {
 	if c == nil {
 		c = context.Background()
 	}
+	base := e.interpretCore(c, req)
+	return e.auditDraft(c, req, base)
+}
+
+func (e *Engine) interpretCore(c context.Context, req Request) Outcome {
+	if c == nil {
+		c = context.Background()
+	}
 	original := strings.TrimSpace(req.Text)
 	t := norm(original)
 	ctx := req.Context
