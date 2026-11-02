@@ -6,13 +6,16 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.12.0**. It is
+This repository holds the working prototype up through **v0.13.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
 
 - Go HTTP interpretation engine with deterministic fallback, bounded semantic
   evidence frames, attribution/quotation guards, and explicit limits on what the model can decide.
+- Optional **v0.13 evidence-hypothesis comparator**, disabled by default;
+  selects supporting source spans for two rival authority hypotheses. The
+  CPU experimental backend remains slow and unreliable (see EXPERIMENT-V013.md).
 - Optional experimental Qwen3 1.7B GGUF inference bridge; the weights are not
   bundled, and the experimental Python/PyTorch runtime is not optimized.
 - Per-user communication preferences and correction handling.
@@ -55,3 +58,11 @@ secret keys or local databases belong in this repository.
 inputs only. Not suitable for deployment on a public interface.
 
 Guiding principle: *Humildade diante das evidências. Acima de tudo.*
+
+## v0.13 research status
+
+Two-source evidence comparison is opt-in via `qwen3-1.7b-evidence`. This is
+research, not general reasoning; the Qwen selected span IDs rather than writing
+free text, and the complete live model trial timed out.
+See [EXPERIMENT-V013.md](EXPERIMENT-V013.md) for failures, reproducibility and
+the partially recorded real-model trial.
