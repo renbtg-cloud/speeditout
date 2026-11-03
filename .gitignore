@@ -23,3 +23,6 @@ __pycache__/
 /results/*-journal.jsonl
 /results/*-events.jsonl
 /results/local-private-*
+
+# TypeScript compilation output
+/clients/react-native-web/dist/
