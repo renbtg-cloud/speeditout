@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"math"
+	"path/filepath"
 	"os"
 	"sort"
 	"strings"
@@ -56,6 +57,7 @@ type record struct {
 	Example        *Example        `json:"example,omitempty"`
 	Feedback       *UserFeedback   `json:"feedback,omitempty"`
 	FeedbackDelete *FeedbackDelete `json:"feedback_delete,omitempty"`
+	NextID         *int64          `json:"next_id,omitempty"`
 }
 
 // Memory is concurrency-safe. Writes are consent-gated, serialized, and fsynced.
@@ -67,6 +69,8 @@ type Memory struct {
 	feedback map[int64]UserFeedback
 	next     int64
 	f        *os.File
+	path     string
+	lockPath string
 }
 
 func prefKey(w, u, r, k string) string { return w + "\x00" + u + "\x00" + r + "\x00" + k }
@@ -75,22 +79,48 @@ func NewMemory(path string) (*Memory, error) {
 	if path == "" {
 		return m, nil
 	}
-	f, err := os.OpenFile(path, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0600)
+	// Refuse multiple processes opening the same journal for writes. This
+	// advisory lock is intentionally conservative: a crash leaves a stale
+	// .lock that an operator must inspect and remove after confirming no
+	// prior process still owns the journal. Never auto-steal stale locks.
+	absPath, err := filepath.Abs(path)
+	if err != nil { return nil, err }
+	lockPath := absPath + ".lock"
+	lock, err := os.OpenFile(lockPath, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
+	if err != nil { return nil, fmt.Errorf("journal appears in use (or stale lock): %w", err) }
+	if _, err = fmt.Fprintf(lock, "pid=%d\n", os.Getpid()); err != nil {
+		lock.Close(); os.Remove(lockPath); return nil, err
+	}
+	if err = lock.Close(); err != nil { os.Remove(lockPath); return nil, err }
+	f, err := os.OpenFile(absPath, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0600)
 	if err != nil {
+		os.Remove(lockPath)
 		return nil, err
 	}
 	m.f = f
+	m.path = absPath
+	m.lockPath = lockPath
 	scan := bufio.NewScanner(f)
 	scan.Buffer(make([]byte, 4096), 8<<20)
 	for scan.Scan() {
 		var rec record
 		if err := json.Unmarshal(scan.Bytes(), &rec); err != nil {
 			f.Close()
+			os.Remove(lockPath)
 			return nil, fmt.Errorf("memory log invalid: %w", err)
 		}
 		if (rec.Kind == "pref" || rec.Kind == "correction") && rec.Preference != nil {
 			p := rec.Preference
 			m.prefs[prefKey(p.Workspace, p.UserID, p.Recipient, p.Key)] = p.Value
+		}
+		if rec.Kind == "counter" && rec.NextID != nil {
+			if *rec.NextID < 1 {
+				f.Close()
+				return nil, fmt.Errorf("memory log invalid: counter")
+			}
+			if *rec.NextID > m.next {
+				m.next = *rec.NextID
+			}
 		}
 		if rec.Kind == "feedback" && rec.Feedback != nil {
 			x := *rec.Feedback
@@ -118,6 +148,7 @@ func NewMemory(path string) (*Memory, error) {
 	}
 	if err := scan.Err(); err != nil {
 		f.Close()
+		os.Remove(lockPath)
 		return nil, err
 	}
 	return m, nil
@@ -125,10 +156,14 @@ func NewMemory(path string) (*Memory, error) {
 func (m *Memory) Close() error {
 	m.mu.Lock()
 	defer m.mu.Unlock()
-	if m.f != nil {
-		return m.f.Close()
+	if m.f == nil { return nil }
+	err := m.f.Close()
+	m.f = nil
+	if m.lockPath != "" {
+		if e := os.Remove(m.lockPath); e != nil && err == nil { err = e }
+		m.lockPath = ""
 	}
-	return nil
+	return err
 }
 func (m *Memory) appendRecord(rec record) error {
 	if m.f == nil {
