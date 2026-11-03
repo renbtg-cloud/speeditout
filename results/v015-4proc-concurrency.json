@@ -1,0 +1,30 @@
+{
+  "kind": "four independent client processes, 64 connections each; same Linux host, 4 CPU quota",
+  "client_processes": 4,
+  "connections_total": 256,
+  "mixed_cases": 83,
+  "duration_sec_approx": 5.038,
+  "requests": 57028,
+  "failures": 0,
+  "passed": 57028,
+  "aggregate_rps_approx": 11319.6,
+  "client_reports": [
+    "/mnt/data/speeditout-v015/results/multiprocess-client-0.json",
+    "/mnt/data/speeditout-v015/results/multiprocess-client-1.json",
+    "/mnt/data/speeditout-v015/results/multiprocess-client-2.json",
+    "/mnt/data/speeditout-v015/results/multiprocess-client-3.json"
+  ],
+  "e2e_checks": [
+    "HTTP baseline interpretation",
+    "HTTP no-consent rejection",
+    "Explicit authorized correction accepted",
+    "Correction applied for boss",
+    "Recipient isolation",
+    "No-draft instruction honored",
+    "Unknown JSON field rejected",
+    "Durable restart/replay",
+    "Four independent concurrent load-generator processes completed successfully"
+  ],
+  "checks_failed": 0,
+  "checks_passed": 9
+}
