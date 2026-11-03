@@ -22,7 +22,28 @@ type JournalCompaction struct {
 	ActiveFeedback int   `json:"active_feedback"`
 }
 
+// JournalStats reports counts without rewriting. The byte count includes
+// tombstoned entries because they remain in the un-compacted active journal.
+func (m *Memory) JournalStats() (JournalCompaction, error) {
+	m.mu.RLock()
+	defer m.mu.RUnlock()
+	if m.path == "" || m.f == nil {
+		return JournalCompaction{}, errors.New("file-backed journal required")
+	}
+	stat, err := m.f.Stat()
+	if err != nil {
+		return JournalCompaction{}, err
+	}
+	return JournalCompaction{BeforeBytes: stat.Size(), Preferences: len(m.prefs), Examples: len(m.examples), ActiveFeedback: len(m.feedback)}, nil
+}
+
 func (m *Memory) CompactJournal() (JournalCompaction, error) {
+	return m.compactJournalWithReplace(os.Rename)
+}
+
+// Accepting the replacement function internally allows deterministic
+// filesystem-failure tests without modifying process-global state.
+func (m *Memory) compactJournalWithReplace(replace func(string, string) error) (JournalCompaction, error) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
 	var result JournalCompaction
@@ -114,7 +135,7 @@ func (m *Memory) CompactJournal() (JournalCompaction, error) {
 		return result, err
 	}
 	m.f = nil
-	if err = os.Rename(tempName, m.path); err != nil {
+	if err = replace(tempName, m.path); err != nil {
 		reopened, reopenErr := os.OpenFile(m.path, os.O_RDWR|os.O_APPEND, 0600)
 		if reopenErr == nil {
 			m.f = reopened
