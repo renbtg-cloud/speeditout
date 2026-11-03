@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.18.0**. It is
+This repository holds the working prototype up through **v0.19.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -150,3 +150,17 @@ journal, removing tombstoned feedback from the current file while preserving
 remaining preferences, examples and active feedback. This is opt-in and
 not exposed over HTTP. It does **not** securely erase backups or old SSD
 sectors. See [EXPERIMENT-V018.md](EXPERIMENT-V018.md) for tests and limits.
+
+## v0.19: real client/server contract tests
+
+A new Node test starts the **real local Go server** and verifies the TypeScript
+client against live JSON. The integration covers draft approval, consented
+feedback and tombstones, while remaining loopback-only and synthetic.
+CPU microbenchmarks are included without claiming any model improvement.
+See [EXPERIMENT-V019.md](EXPERIMENT-V019.md) for limitations.
+
+
+The journal now also rejects unknown record types and uses an exclusive
+single-process `.lock` marker, with failure-injection tests for atomic
+replacement and a disconnected writer. Lock files are never stolen
+automatically. See [docs/JOURNAL-COMPACTION.md](docs/JOURNAL-COMPACTION.md).
