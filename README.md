@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.14.0**. It is
+This repository holds the working prototype up through **v0.15.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -88,3 +88,31 @@ in [`tools/windows-llama/`](tools/windows-llama/). They have not been executed
 on an actual Windows host in this experiment. CI includes Linux and Windows
 build/test jobs; a committed workflow is not evidence that GitHub Actions
 has executed successfully.
+
+## v0.15 research status
+
+This release tightens quoted-instruction attribution, literal evidence
+provenance and **incoming** JSON ambiguity checks. The optional local model
+can now use a per-request time budget and an opt-in failure cooldown, both
+controlled by the Go process. The evaluator supports a durable JSONL journal
+so an interrupted Qwen benchmark preserves completed cases.
+
+The default remains **Go-only**, with no network model required; no new
+Qwen or llama.cpp inference speed claim was made in v0.15. These controls do
+not create production authentication or permission to send messages.
+See [EXPERIMENT-V015.md](EXPERIMENT-V015.md) and
+[docs/LOCAL-MODEL-RESILIENCE.md](docs/LOCAL-MODEL-RESILIENCE.md).
+
+Example when an optional model is available on local loopback:
+
+```sh
+go run ./cmd/speeditout -listen 127.0.0.1:18761 \
+  -local-model-url http://127.0.0.1:18913/v1/chat/completions \
+  -local-model-name qwen3-1.7b -model-profile qwen3-1.7b-evidence \
+  -model-budget 1s -model-timeout 30s \
+  -model-failures 3 -model-cooldown 30s
+```
+
+A 1-second budget is a UX tradeoff and may cause all CPU-only inferences to
+time out; it is not a recommendation for evaluating model quality. Use no
+`-model-budget` for an offline, CPU-bound research benchmark.
