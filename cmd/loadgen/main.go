@@ -179,7 +179,7 @@ func main() {
 		}
 		return math.Round(float64(samples.latencies[idx])/1e4) / 100
 	}
-	r := report{Version: "0.9.0", Workload: mode, Cases: len(cases), URL: *url, Concurrency: *clients, DurationSec: math.Round(secs*1000) / 1000, Requests: passed.Load() + failed.Load(), Failures: failed.Load(), Passed: passed.Load(), ThroughputRPS: math.Round(float64(passed.Load()+failed.Load())/secs*10) / 10, P50MS: pct(.5), P95MS: pct(.95), P99MS: pct(.99), MaxMS: pct(1), ErrorExamples: errorsList, Disclaimer: "HTTP+JSON+rule-based interpretation only, not audio/LLM; single host contends for client/server CPU; predefined cases are not independent holdout evaluation."}
+	r := report{Version: "0.16.0", Workload: mode, Cases: len(cases), URL: *url, Concurrency: *clients, DurationSec: math.Round(secs*1000) / 1000, Requests: passed.Load() + failed.Load(), Failures: failed.Load(), Passed: passed.Load(), ThroughputRPS: math.Round(float64(passed.Load()+failed.Load())/secs*10) / 10, P50MS: pct(.5), P95MS: pct(.95), P99MS: pct(.99), MaxMS: pct(1), ErrorExamples: errorsList, Disclaimer: "HTTP+JSON+rule-based interpretation only, not audio/LLM; single host contends for client/server CPU; predefined cases are not independent holdout evaluation."}
 	b, _ := json.MarshalIndent(r, "", "  ")
 	fmt.Println(string(b))
 	if *output != "" {
