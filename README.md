@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.15.0**. It is
+This repository holds the working prototype up through **v0.16.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -116,3 +116,15 @@ go run ./cmd/speeditout -listen 127.0.0.1:18761 \
 A 1-second budget is a UX tradeoff and may cause all CPU-only inferences to
 time out; it is not a recommendation for evaluating model quality. Use no
 `-model-budget` for an offline, CPU-bound research benchmark.
+
+## v0.16: policy, isolation and client contract
+
+The Go engine applies a central, **fail-closed** decision policy; the research
+HTTP server refuses all non-loopback listener addresses. Both model-assisted
+and deterministic outputs include a bounded `decision_audit` that cannot grant
+permission to send a message. A strict TypeScript prototype for future mobile
+and web clients validates the audit before presenting a proposed draft.
+
+See [EXPERIMENT-V016.md](EXPERIMENT-V016.md) for test counts and limitations.
+The client transport is not a real React Native app; the server has no
+network-facing authentication or TLS and is unsuitable for a public service.
