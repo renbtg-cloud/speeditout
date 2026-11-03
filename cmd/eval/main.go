@@ -4,6 +4,7 @@
 package main
 
 import (
+	"crypto/sha256"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -72,6 +73,17 @@ func percent(nums []int64, percentile float64) float64 {
 	return float64(x[n]) / 1000
 }
 func run(cases []TestCase, eng *engine.Engine, label string, progress bool) Summary {
+	result, err := runJournal(cases, eng, label, progress, nil)
+	if err != nil {
+		panic(err)
+	}
+	return result
+}
+
+// runJournal writes and syncs one observation immediately after completion.
+// If a long live-model run is interrupted, the journal preserves the complete
+// prefix of measured outcomes instead of silently losing the entire run.
+func runJournal(cases []TestCase, eng *engine.Engine, label string, progress bool, journal *os.File) (Summary, error) {
 	s := Summary{Total: len(cases), Results: make([]Observation, 0, len(cases))}
 	delays := make([]int64, 0, len(cases))
 	for i, tc := range cases {
@@ -85,7 +97,22 @@ func run(cases []TestCase, eng *engine.Engine, label string, progress bool) Summ
 		} else {
 			s.Failed++
 		}
-		s.Results = append(s.Results, Observation{ID: tc.ID, ExpectedIntent: tc.ExpectedIntent, ExpectedDecision: tc.ExpectedDecision, ActualIntent: got.Intent, ActualDecision: got.Decision, Correct: ok, LatencyMicroseconds: elapsed, Reasons: got.Reasons})
+		observation := Observation{ID: tc.ID, ExpectedIntent: tc.ExpectedIntent, ExpectedDecision: tc.ExpectedDecision, ActualIntent: got.Intent, ActualDecision: got.Decision, Correct: ok, LatencyMicroseconds: elapsed, Reasons: got.Reasons}
+		s.Results = append(s.Results, observation)
+		if journal != nil {
+			event := struct {
+				Phase       string      `json:"phase"`
+				Index       int         `json:"index"`
+				Total       int         `json:"total"`
+				Observation Observation `json:"observation"`
+			}{label, i + 1, len(cases), observation}
+			if err := json.NewEncoder(journal).Encode(event); err != nil {
+				return s, err
+			}
+			if err := journal.Sync(); err != nil {
+				return s, err
+			}
+		}
 		delays = append(delays, elapsed)
 		gateStatus := ""
 		for _, reason := range got.Reasons {
@@ -111,7 +138,7 @@ func run(cases []TestCase, eng *engine.Engine, label string, progress bool) Summ
 	s.P50MS = percent(delays, 0.50)
 	s.P95MS = percent(delays, 0.95)
 	s.P99MS = percent(delays, 0.99)
-	return s
+	return s, nil
 }
 func compare(a, b Summary) (int, int, int) {
 	improved, regressed, changed := 0, 0, 0
@@ -137,8 +164,16 @@ func main() {
 	profile := flag.String("model-profile", "generic", "generic, qwen3-1.7b, or qwen3-1.7b-evidence")
 	parallel := flag.Int("model-parallel", 1, "maximum concurrent model calls")
 	timeout := flag.Duration("model-timeout", 10*time.Second, "local model timeout on CPU")
+	budget := flag.Duration("model-budget", 0, "optional inference budget per sample; 0 for historical timeout")
+	modelFailures := flag.Uint("model-failures", 0, "optional consecutive error threshold")
+	modelCooldown := flag.Duration("model-cooldown", 0, "optional local model circuit cooldown")
 	progress := flag.Bool("progress", false, "per-case status to stderr (no text content)")
+	journalPath := flag.String("journal", "", "durable per-case JSONL journal; preserves partial live-model runs")
 	flag.Parse()
+	if *budget < 0 || *budget > 120*time.Second {
+		fmt.Fprintln(os.Stderr, "-model-budget must be between 0 and 120s")
+		os.Exit(2)
+	}
 	b, err := os.ReadFile(*file)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -154,8 +189,28 @@ func main() {
 		panic(err)
 	}
 	defer mem.Close()
+	var journal *os.File
+	if *journalPath != "" {
+		journal, err = os.OpenFile(*journalPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(2)
+		}
+		defer journal.Close()
+		header := map[string]any{"type": "run_header", "corpus_sha256": fmt.Sprintf("%x", sha256.Sum256(b)), "case_count": len(cases), "model_profile": *profile, "model_enabled": *endpoint != ""}
+		if err := json.NewEncoder(journal).Encode(header); err != nil {
+			panic(err)
+		}
+		if err := journal.Sync(); err != nil {
+			panic(err)
+		}
+	}
 	r := Report{ModelProfile: *profile, ModelName: *name, Notes: []string{"Accuracy means exact agreement with the stated intent and decision. These are developer-authored scenarios, not a human clinical or usability evaluation.", "Local-model inference is counted only when an actual model endpoint is supplied; synthetic providers cannot establish LLM ability.", "Latency is sequential local elapsed time, NOT throughput under concurrency."}}
-	r.Baseline = run(cases, &engine.Engine{Memory: mem}, "baseline", *progress)
+	r.Baseline, err = runJournal(cases, &engine.Engine{Memory: mem}, "baseline", *progress, journal)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "journal failure:", err)
+		os.Exit(2)
+	}
 	if *endpoint != "" {
 		model, err := engine.NewLocalModelWithProfile(*endpoint, *name, *parallel, *timeout, *profile)
 		if err != nil {
@@ -163,7 +218,17 @@ func main() {
 			os.Exit(2)
 		}
 		r.ComparisonEnabled = true
-		x := run(cases, &engine.Engine{Memory: mem, Model: model}, "hybrid", *progress)
+		if *modelFailures != 0 || *modelCooldown != 0 {
+			if err := model.ConfigureFailureCooldown(uint32(*modelFailures), *modelCooldown); err != nil {
+				fmt.Fprintln(os.Stderr, err)
+				os.Exit(2)
+			}
+		}
+		x, journalErr := runJournal(cases, &engine.Engine{Memory: mem, Model: model, ModelBudget: *budget}, "hybrid", *progress, journal)
+		if journalErr != nil {
+			fmt.Fprintln(os.Stderr, "journal failure:", journalErr)
+			os.Exit(2)
+		}
 		r.Hybrid = &x
 		r.Improvements, r.Regressions, r.Changed = compare(r.Baseline, x)
 	}

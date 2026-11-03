@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"mime"
 	"net/http"
 	"os"
 	"os/signal"
@@ -57,11 +58,21 @@ func decode(w http.ResponseWriter, r *http.Request, dst any) bool {
 		respond(w, 405, map[string]string{"error": "method not allowed"})
 		return false
 	}
-	if !strings.HasPrefix(r.Header.Get("Content-Type"), "application/json") {
+	mediaType, _, mediaErr := mime.ParseMediaType(r.Header.Get("Content-Type"))
+	if mediaErr != nil || mediaType != "application/json" {
 		respond(w, 415, map[string]string{"error": "application/json required"})
 		return false
 	}
-	d := json.NewDecoder(http.MaxBytesReader(w, r.Body, 65536))
+	body, readErr := io.ReadAll(http.MaxBytesReader(w, r.Body, 65536))
+	if readErr != nil {
+		respond(w, 400, map[string]string{"error": "invalid JSON or request too large"})
+		return false
+	}
+	if err := validateRequestJSON(body); err != nil {
+		respond(w, 400, map[string]string{"error": "invalid or ambiguous JSON: " + err.Error()})
+		return false
+	}
+	d := json.NewDecoder(strings.NewReader(string(body)))
 	d.DisallowUnknownFields()
 	if err := d.Decode(dst); err != nil {
 		respond(w, 400, map[string]string{"error": "invalid JSON or request too large: " + err.Error()})
@@ -80,7 +91,11 @@ func (s *server) mux() *http.ServeMux {
 		respond(w, 200, map[string]string{"status": "ok", "engine": "offline-viper-hybrid"})
 	})
 	mux.HandleFunc("GET /metrics", func(w http.ResponseWriter, r *http.Request) {
-		respond(w, 200, map[string]uint64{"requests": s.requests.Load(), "failures": s.failures.Load()})
+		stats := engine.ModelCircuitStats{}
+		if s.e.Model != nil {
+			stats = s.e.Model.ModelStats()
+		}
+		respond(w, 200, map[string]any{"requests": s.requests.Load(), "failures": s.failures.Load(), "model_circuit": stats})
 	})
 	mux.HandleFunc("POST /v1/audio/assess", func(w http.ResponseWriter, r *http.Request) {
 		var req audioquality.Request
@@ -168,8 +183,14 @@ func main() {
 	flagModelName := flag.String("local-model-name", "", "local model identifier (required when enabled)")
 	flagModelProfile := flag.String("model-profile", "generic", "generic or qwen3-1.7b; specialized navigation without controlling final output")
 	flagModelParallel := flag.Int("model-parallel", 2, "maximum simultaneous local inference requests")
-	flagModelTimeout := flag.Duration("model-timeout", 30*time.Second, "local inference deadline (CPU model may require seconds); fallback on timeout")
+	flagModelTimeout := flag.Duration("model-timeout", 30*time.Second, "provider inference deadline; fallback on timeout")
+	flagModelBudget := flag.Duration("model-budget", 0, "optional per-interpretation inference budget (e.g. 750ms); 0 keeps historical timeout")
+	flagModelFailures := flag.Uint("model-failures", 0, "failures before temporarily skipping the local model; 0 disables breaker")
+	flagModelCooldown := flag.Duration("model-cooldown", 0, "cooldown after repeated model errors (e.g. 30s); 0 disables breaker")
 	flag.Parse()
+	if *flagModelBudget < 0 || *flagModelBudget > 120*time.Second {
+		log.Fatal("-model-budget must be between 0 and 120s")
+	}
 	m, err := engine.NewMemory(*memoryPath)
 	if err != nil {
 		log.Fatal(err)
@@ -181,7 +202,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	s := &server{e: &engine.Engine{Memory: m, Model: localModel}}
+	if *flagModelFailures != 0 || *flagModelCooldown != 0 {
+		if localModel == nil {
+			log.Fatal("cannot enable circuit without a model")
+		}
+		if err := localModel.ConfigureFailureCooldown(uint32(*flagModelFailures), *flagModelCooldown); err != nil {
+			log.Fatal(err)
+		}
+	}
+	s := &server{e: &engine.Engine{Memory: m, Model: localModel, ModelBudget: *flagModelBudget}}
 	writeTimeout := 5 * time.Second
 	if localModel != nil && *flagModelTimeout+2*time.Second > writeTimeout {
 		writeTimeout = *flagModelTimeout + 2*time.Second
