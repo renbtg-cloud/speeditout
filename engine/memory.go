@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 	"math"
-	"path/filepath"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 	"sync"
@@ -84,14 +84,23 @@ func NewMemory(path string) (*Memory, error) {
 	// .lock that an operator must inspect and remove after confirming no
 	// prior process still owns the journal. Never auto-steal stale locks.
 	absPath, err := filepath.Abs(path)
-	if err != nil { return nil, err }
+	if err != nil {
+		return nil, err
+	}
 	lockPath := absPath + ".lock"
 	lock, err := os.OpenFile(lockPath, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
-	if err != nil { return nil, fmt.Errorf("journal appears in use (or stale lock): %w", err) }
-	if _, err = fmt.Fprintf(lock, "pid=%d\n", os.Getpid()); err != nil {
-		lock.Close(); os.Remove(lockPath); return nil, err
+	if err != nil {
+		return nil, fmt.Errorf("journal appears in use (or stale lock): %w", err)
 	}
-	if err = lock.Close(); err != nil { os.Remove(lockPath); return nil, err }
+	if _, err = fmt.Fprintf(lock, "pid=%d\n", os.Getpid()); err != nil {
+		lock.Close()
+		os.Remove(lockPath)
+		return nil, err
+	}
+	if err = lock.Close(); err != nil {
+		os.Remove(lockPath)
+		return nil, err
+	}
 	f, err := os.OpenFile(absPath, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0600)
 	if err != nil {
 		os.Remove(lockPath)
@@ -103,8 +112,8 @@ func NewMemory(path string) (*Memory, error) {
 	scan := bufio.NewScanner(f)
 	scan.Buffer(make([]byte, 4096), 8<<20)
 	for scan.Scan() {
-		var rec record
-		if err := json.Unmarshal(scan.Bytes(), &rec); err != nil {
+		rec, err := decodeJournalRecord(scan.Bytes())
+		if err != nil {
 			f.Close()
 			os.Remove(lockPath)
 			return nil, fmt.Errorf("memory log invalid: %w", err)
@@ -156,17 +165,24 @@ func NewMemory(path string) (*Memory, error) {
 func (m *Memory) Close() error {
 	m.mu.Lock()
 	defer m.mu.Unlock()
-	if m.f == nil { return nil }
-	err := m.f.Close()
-	m.f = nil
+	var err error
+	if m.f != nil {
+		err = m.f.Close()
+		m.f = nil
+	}
 	if m.lockPath != "" {
-		if e := os.Remove(m.lockPath); e != nil && err == nil { err = e }
+		if e := os.Remove(m.lockPath); e != nil && err == nil {
+			err = e
+		}
 		m.lockPath = ""
 	}
 	return err
 }
 func (m *Memory) appendRecord(rec record) error {
 	if m.f == nil {
+		if m.path != "" {
+			return errors.New("file-backed journal is not writable")
+		}
 		return nil
 	}
 	b, err := json.Marshal(rec)
