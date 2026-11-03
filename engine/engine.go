@@ -4,6 +4,7 @@ import (
 	"context"
 	"regexp"
 	"strings"
+	"time"
 	"unicode"
 )
 
@@ -63,6 +64,9 @@ func out(dec, intent, reply, conf string, reasons ...string) Outcome {
 type Engine struct {
 	Memory *Memory
 	Model  *LocalModel
+	// ModelBudget bounds optional inference without changing deterministic work.
+	// Zero preserves the historical provider-configured timeout.
+	ModelBudget time.Duration
 }
 
 // Interpret preserves the original research API for synchronous callers.
@@ -77,6 +81,11 @@ func (e *Engine) InterpretContext(c context.Context, req Request) Outcome {
 		c = context.Background()
 	}
 	base := e.interpretCore(c, req)
+	if e.Model != nil && e.ModelBudget > 0 {
+		bounded, cancel := context.WithTimeout(c, e.ModelBudget)
+		defer cancel()
+		return e.auditDraft(bounded, req, base)
+	}
 	return e.auditDraft(c, req, base)
 }
 
@@ -106,6 +115,9 @@ func (e *Engine) interpretCore(c context.Context, req Request) Outcome {
 	}
 	if original == "" {
 		return out("clarify", "unknown", "Não ouvi ou recebi nenhuma mensagem. Pode tentar de novo?", "low", "empty_input")
+	}
+	if v, ok := reportedQuoteGuard(req); ok {
+		return v
 	}
 	if v, ok := authorityPreflight(req); ok {
 		return v

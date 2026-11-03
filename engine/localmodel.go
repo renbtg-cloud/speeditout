@@ -24,6 +24,7 @@ type LocalModel struct {
 	client   *http.Client
 	slots    chan struct{}
 	profile  string
+	circuit  *modelCircuit
 }
 
 func NewLocalModel(endpoint, name string, parallel int, timeout time.Duration) (*LocalModel, error) {
@@ -92,7 +93,11 @@ type qwenNavigatorLabel struct {
 	Abstain  bool   `json:"abstain"`
 }
 
-func (m *LocalModel) Classify(ctx context.Context, req Request) (string, error) {
+func (m *LocalModel) Classify(ctx context.Context, req Request) (intent string, err error) {
+	if err = m.circuitEnter(); err != nil {
+		return "", err
+	}
+	defer func() { m.circuitDone(err) }()
 	if m == nil {
 		return "", errors.New("model disabled")
 	}
@@ -227,7 +232,7 @@ func parseQwenNavigatorResult(raw, original string) (string, error) {
 		return "", errors.New("unknown navigator intent")
 	}
 	ev := strings.TrimSpace(label.Evidence)
-	if utf8.RuneCountInString(ev) < 4 || utf8.RuneCountInString(ev) > 120 || !strings.Contains(norm(original), norm(ev)) {
+	if utf8.RuneCountInString(ev) < 4 || utf8.RuneCountInString(ev) > 120 || !strings.Contains(original, ev) {
 		return "", errors.New("navigator evidence absent from original text")
 	}
 	return label.Intent, nil

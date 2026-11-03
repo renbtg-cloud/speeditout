@@ -62,17 +62,24 @@ func parseAuthorityEvidence(raw, original string) (AuthorityEvidence, error) {
 		if excerpt == "" {
 			continue
 		}
-		if utf8.RuneCountInString(excerpt) > 200 || !strings.Contains(original, excerpt) {
-			return AuthorityEvidence{}, errors.New("model-selected span not present verbatim in original")
+		if utf8.RuneCountInString(excerpt) > 200 {
+			return AuthorityEvidence{}, errors.New("model-selected span too long")
+		}
+		if _, _, err := locateEvidence(original, excerpt); err != nil {
+			return AuthorityEvidence{}, err
 		}
 	}
-	if output.Direct != "" && output.Direct == output.Reported {
-		return AuthorityEvidence{}, errors.New("evidence cannot support both opposing hypotheses from one identical span")
+	if overlappingEvidence(original, output.Reported, output.Direct) {
+		return AuthorityEvidence{}, errors.New("opposing evidence overlaps")
 	}
 	return output, nil
 }
 
-func (m *LocalModel) CompareAuthorityEvidence(ctx context.Context, req Request) (AuthorityEvidence, error) {
+func (m *LocalModel) CompareAuthorityEvidence(ctx context.Context, req Request) (result AuthorityEvidence, err error) {
+	if err = m.circuitEnter(); err != nil {
+		return result, err
+	}
+	defer func() { m.circuitDone(err) }()
 	var empty AuthorityEvidence
 	if m == nil || m.profile != "qwen3-1.7b-evidence" {
 		return empty, errors.New("evidence model profile required")
@@ -184,8 +191,8 @@ func directEvidenceSupported(span, original string) bool {
 		if cl.Source == "third_party" || cl.Mode == "hypothetical" || cl.Mode == "question" {
 			continue
 		}
-		unquoted := strings.TrimSpace(quoteRE.ReplaceAllString(cl.Text, " "))
-		if strings.Contains(cl.Text, norm(span)) && ownDirectCue.MatchString(unquoted) {
+		unquoted := strings.TrimSpace(stripQuotedText(cl.Text))
+		if strings.Contains(unquoted, norm(span)) && ownDirectCue.MatchString(unquoted) {
 			return true
 		}
 	}

@@ -103,7 +103,11 @@ func parseAuthorityRanking(raw, original string) (AuthorityRanking, error) {
 	return a, nil
 }
 
-func (m *LocalModel) RankAuthority(ctx context.Context, req Request) (AuthorityRanking, error) {
+func (m *LocalModel) RankAuthority(ctx context.Context, req Request) (result AuthorityRanking, err error) {
+	if err = m.circuitEnter(); err != nil {
+		return result, err
+	}
+	defer func() { m.circuitDone(err) }()
 	var empty AuthorityRanking
 	if m == nil || m.profile != "qwen3-1.7b" {
 		return empty, errors.New("authority ranking requires local Qwen profile")
@@ -195,7 +199,7 @@ func authorityVetoSupported(original string, a AuthorityRanking) bool {
 	}
 	// Never override a clear, independent user imperative outside quotes.
 	for _, cl := range splitSemantic(original) {
-		outside := strings.TrimSpace(quoteRE.ReplaceAllString(cl.Text, " "))
+		outside := strings.TrimSpace(stripQuotedText(cl.Text))
 		if cl.Source != "third_party" && ownDirectCue.MatchString(outside) {
 			return false
 		}
