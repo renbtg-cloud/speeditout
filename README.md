@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.17.0**. It is
+This repository holds the working prototype up through **v0.18.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -142,3 +142,11 @@ indexes but DOES NOT erase historical plaintext bytes. The local research API
 has no user authentication or TLS. Do not use real personal data. See
 [EXPERIMENT-V017.md](EXPERIMENT-V017.md) and
 [docs/FEEDBACK-RESEARCH.md](docs/FEEDBACK-RESEARCH.md).
+
+## v0.18: compact the local feedback journal
+
+An **operator-only** `cmd/memorycompact` tool can rewrite the research JSONL
+journal, removing tombstoned feedback from the current file while preserving
+remaining preferences, examples and active feedback. This is opt-in and
+not exposed over HTTP. It does **not** securely erase backups or old SSD
+sectors. See [EXPERIMENT-V018.md](EXPERIMENT-V018.md) for tests and limits.
