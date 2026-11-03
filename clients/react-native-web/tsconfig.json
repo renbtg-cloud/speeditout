@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "outDir": "dist"
   },
-  "include": ["interpretationClient.ts"]
+  "include": ["interpretationClient.ts", "feedbackClient.ts"]
 }
