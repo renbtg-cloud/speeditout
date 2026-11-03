@@ -54,6 +54,7 @@ type Outcome struct {
 	MatchedExampleIDs []int64        `json:"matched_example_ids"`
 	RequiresApproval  bool           `json:"requires_approval"`
 	ExternalCalls     int            `json:"external_calls"`
+	DecisionAudit     *DecisionAudit `json:"decision_audit,omitempty"`
 	Semantic          *SemanticTrace `json:"semantic,omitempty"`
 }
 
@@ -80,13 +81,16 @@ func (e *Engine) InterpretContext(c context.Context, req Request) Outcome {
 	if c == nil {
 		c = context.Background()
 	}
-	base := e.interpretCore(c, req)
+	// The budget covers BOTH navigator classification in interpretCore and
+	// evidence/ranking in auditDraft. In v0.15 it only covered auditDraft;
+	// that left an unexpectedly slow fallback navigator unbounded.
 	if e.Model != nil && e.ModelBudget > 0 {
 		bounded, cancel := context.WithTimeout(c, e.ModelBudget)
 		defer cancel()
-		return e.auditDraft(bounded, req, base)
+		c = bounded
 	}
-	return e.auditDraft(c, req, base)
+	base := e.interpretCore(c, req)
+	return enforceDecisionPolicy(e.auditDraft(c, req, base))
 }
 
 func (e *Engine) interpretCore(c context.Context, req Request) Outcome {
