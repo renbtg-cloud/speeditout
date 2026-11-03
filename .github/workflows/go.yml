@@ -22,4 +22,18 @@ jobs:
         run: go run ./cmd/regress -baseline results/v013-go-regressions.json
       - name: Race detector on Linux
         if: runner.os == 'Linux'
-        run: go test -race ./... -count=1
+        run: go test -race -short ./... -count=1
+
+  client-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned TypeScript compiler
+        run: npm install --no-save --no-package-lock typescript@5.9.3
+      - name: Compile client transport
+        run: ./node_modules/.bin/tsc -p clients/react-native-web
+      - name: Test fail-closed client contract
+        run: node --test clients/react-native-web/tests/*.cjs
