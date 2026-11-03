@@ -35,5 +35,12 @@ jobs:
         run: npm install --no-save --no-package-lock typescript@5.9.3
       - name: Compile client transport
         run: ./node_modules/.bin/tsc -p clients/react-native-web
-      - name: Test fail-closed client contract
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build real Go service for transport integration
+        run: go build -o /tmp/speeditout-contract-backend ./cmd/speeditout
+      - name: Unit checks and full Go/TypeScript HTTP contract
+        env:
+          SPEEDITOUT_SERVER_BINARY: /tmp/speeditout-contract-backend
         run: node --test clients/react-native-web/tests/*.cjs
