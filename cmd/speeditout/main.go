@@ -188,6 +188,9 @@ func main() {
 	flagModelFailures := flag.Uint("model-failures", 0, "failures before temporarily skipping the local model; 0 disables breaker")
 	flagModelCooldown := flag.Duration("model-cooldown", 0, "cooldown after repeated model errors (e.g. 30s); 0 disables breaker")
 	flag.Parse()
+	if err := researchListener(*addr); err != nil {
+		log.Fatal(err)
+	}
 	if *flagModelBudget < 0 || *flagModelBudget > 120*time.Second {
 		log.Fatal("-model-budget must be between 0 and 120s")
 	}
