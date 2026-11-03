@@ -6,7 +6,7 @@
 help people express what they mean, and understand what the machine means,
 without requiring polished language or prompt-engineering skills.
 
-This repository holds the working prototype up through **v0.16.0**. It is
+This repository holds the working prototype up through **v0.17.0**. It is
 research software, **not** a production service or a deployed React Native app.
 
 ## What exists
@@ -128,3 +128,17 @@ and web clients validates the audit before presenting a proposed draft.
 See [EXPERIMENT-V016.md](EXPERIMENT-V016.md) for test counts and limitations.
 The client transport is not a real React Native app; the server has no
 network-facing authentication or TLS and is unsuitable for a public service.
+
+
+## v0.17: feedback with evidence categories
+
+User feedback now distinguishes an apparently misheard message, wrong intent,
+rejected suggestion, insufficient evidence, uncertainty, and helpful responses.
+Recording needs explicit consent; categories and optional notes are written to
+a local append-only journal. Feedback **does not update inference rules**.
+
+The deletion endpoint uses a tombstone only: it removes an item from active
+indexes but DOES NOT erase historical plaintext bytes. The local research API
+has no user authentication or TLS. Do not use real personal data. See
+[EXPERIMENT-V017.md](EXPERIMENT-V017.md) and
+[docs/FEEDBACK-RESEARCH.md](docs/FEEDBACK-RESEARCH.md).
