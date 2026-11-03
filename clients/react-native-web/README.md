@@ -24,3 +24,10 @@ The parser rejects contradictory approval flags, model outcomes, nonzero
 external-call claims and malformed responses. It **does not** provide a
 user-approval flow or a network-authentication mechanism; it merely prevents
 a malformed backend response from being treated as permission to show a draft.
+
+`feedbackClient.ts` exposes explicit-consent submission and tombstone deletion
+for structured user feedback. It never adds audio or raw transcripts to requests
+on its own. **Deletion removes the active in-memory item but does not securely
+erase old bytes from the append-only JSONL journal.** No feedback is treated as
+verified truth or auto-learned into decision rules. Before any real-world launch,
+identity, secure erasure/retention, TLS and user-facing consent must be designed.
