@@ -1,0 +1,18 @@
+{
+  "version": "0.9.0",
+  "workload": "fixed",
+  "cases": 1,
+  "url": "http://127.0.0.1:18769/v1/interpret",
+  "concurrency": 32,
+  "duration_sec": 3.001,
+  "requests": 28620,
+  "failures": 0,
+  "passed": 28620,
+  "throughput_rps": 9537.3,
+  "p50_ms": 1.94,
+  "p95_ms": 7.93,
+  "p99_ms": 14.76,
+  "max_ms": 292.61,
+  "error_examples": [],
+  "disclaimer": "HTTP+JSON+rule-based interpretation only, not audio/LLM; single host contends for client/server CPU; predefined cases are not independent holdout evaluation."
+}
