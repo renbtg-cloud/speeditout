@@ -47,6 +47,25 @@ type correctionRequest struct {
 	Generalize bool   `json:"generalize"`
 }
 
+type feedbackRequest struct {
+	Workspace string `json:"workspace"`
+	UserID    string `json:"user_id"`
+	Category  string `json:"category"`
+	Reference string `json:"reference"`
+	Note      string `json:"note"`
+	Consent   bool   `json:"consent"`
+}
+type feedbackDeleteRequest struct {
+	Workspace string `json:"workspace"`
+	UserID    string `json:"user_id"`
+	ID        int64  `json:"id"`
+	Consent   bool   `json:"consent"`
+}
+type feedbackSummaryRequest struct {
+	Workspace string `json:"workspace"`
+	UserID    string `json:"user_id"`
+}
+
 func respond(w http.ResponseWriter, status int, data any) {
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.WriteHeader(status)
@@ -134,6 +153,48 @@ func (s *server) mux() *http.ServeMux {
 			}
 		}
 		respond(w, 200, s.e.InterpretContext(r.Context(), req))
+	})
+	mux.HandleFunc("POST /v1/feedback", func(w http.ResponseWriter, r *http.Request) {
+		var req feedbackRequest
+		if !decode(w, r, &req) {
+			return
+		}
+		if !req.Consent {
+			respond(w, 403, map[string]string{"error": "explicit consent required"})
+			return
+		}
+		id, err := s.e.Memory.SubmitFeedback(req.Workspace, req.UserID, req.Category, req.Reference, req.Note, req.Consent)
+		if err != nil {
+			respond(w, 400, map[string]string{"error": err.Error()})
+			return
+		}
+		respond(w, 200, map[string]any{"saved": true, "feedback_id": id, "automatically_learned": false})
+	})
+	mux.HandleFunc("POST /v1/feedback/summary", func(w http.ResponseWriter, r *http.Request) {
+		var req feedbackSummaryRequest
+		if !decode(w, r, &req) {
+			return
+		}
+		if req.Workspace == "" || req.UserID == "" || len(req.Workspace) > 128 || len(req.UserID) > 128 {
+			respond(w, 400, map[string]string{"error": "invalid scope"})
+			return
+		}
+		respond(w, 200, map[string]any{"counts": s.e.Memory.FeedbackSummary(req.Workspace, req.UserID)})
+	})
+	mux.HandleFunc("POST /v1/feedback/delete", func(w http.ResponseWriter, r *http.Request) {
+		var req feedbackDeleteRequest
+		if !decode(w, r, &req) {
+			return
+		}
+		if !req.Consent {
+			respond(w, 403, map[string]string{"error": "explicit consent required"})
+			return
+		}
+		if err := s.e.Memory.DeleteFeedback(req.Workspace, req.UserID, req.ID); err != nil {
+			respond(w, 404, map[string]string{"error": "feedback not found in scope"})
+			return
+		}
+		respond(w, 200, map[string]any{"deleted_from_active_index": true, "journal_tombstone_only": true})
 	})
 	mux.HandleFunc("POST /v1/preferences", func(w http.ResponseWriter, r *http.Request) {
 		var req preferenceRequest
