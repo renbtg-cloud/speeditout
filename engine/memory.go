@@ -28,15 +28,34 @@ type Example struct {
 	Note         string `json:"note"`
 	CreatedAt    int64  `json:"created_at"`
 }
+
+// UserFeedback is a consented, user-authored signal, not a proven model error.
+// Neither free-text notes nor per-user feedback are returned in public metrics.
+type UserFeedback struct {
+	ID        int64  `json:"id"`
+	Workspace string `json:"workspace"`
+	UserID    string `json:"user_id"`
+	Category  string `json:"category"`
+	Reference string `json:"reference,omitempty"`
+	Note      string `json:"note,omitempty"`
+	CreatedAt int64  `json:"created_at"`
+}
+type FeedbackDelete struct {
+	Workspace string `json:"workspace"`
+	UserID    string `json:"user_id"`
+	ID        int64  `json:"id"`
+}
 type Similar struct {
 	ID                            int64
 	Score                         float64
 	Recipient, ApprovedText, Note string
 }
 type record struct {
-	Kind       string      `json:"kind"`
-	Preference *Preference `json:"preference,omitempty"`
-	Example    *Example    `json:"example,omitempty"`
+	Kind           string          `json:"kind"`
+	Preference     *Preference     `json:"preference,omitempty"`
+	Example        *Example        `json:"example,omitempty"`
+	Feedback       *UserFeedback   `json:"feedback,omitempty"`
+	FeedbackDelete *FeedbackDelete `json:"feedback_delete,omitempty"`
 }
 
 // Memory is concurrency-safe. Writes are consent-gated, serialized, and fsynced.
@@ -45,13 +64,14 @@ type Memory struct {
 	mu       sync.RWMutex
 	prefs    map[string]string
 	examples []Example
+	feedback map[int64]UserFeedback
 	next     int64
 	f        *os.File
 }
 
 func prefKey(w, u, r, k string) string { return w + "\x00" + u + "\x00" + r + "\x00" + k }
 func NewMemory(path string) (*Memory, error) {
-	m := &Memory{prefs: map[string]string{}, next: 1}
+	m := &Memory{prefs: map[string]string{}, feedback: map[int64]UserFeedback{}, next: 1}
 	if path == "" {
 		return m, nil
 	}
@@ -71,6 +91,23 @@ func NewMemory(path string) (*Memory, error) {
 		if (rec.Kind == "pref" || rec.Kind == "correction") && rec.Preference != nil {
 			p := rec.Preference
 			m.prefs[prefKey(p.Workspace, p.UserID, p.Recipient, p.Key)] = p.Value
+		}
+		if rec.Kind == "feedback" && rec.Feedback != nil {
+			x := *rec.Feedback
+			if x.ID <= 0 || x.Workspace == "" || x.UserID == "" || !validFeedbackCategory(x.Category) {
+				f.Close()
+				return nil, fmt.Errorf("memory log invalid: feedback entry")
+			}
+			m.feedback[x.ID] = x
+			if x.ID >= m.next {
+				m.next = x.ID + 1
+			}
+		}
+		if rec.Kind == "feedback_delete" && rec.FeedbackDelete != nil {
+			d := rec.FeedbackDelete
+			if previous, exists := m.feedback[d.ID]; exists && previous.Workspace == d.Workspace && previous.UserID == d.UserID {
+				delete(m.feedback, d.ID)
+			}
 		}
 		if (rec.Kind == "example" || rec.Kind == "correction") && rec.Example != nil {
 			m.examples = append(m.examples, *rec.Example)
