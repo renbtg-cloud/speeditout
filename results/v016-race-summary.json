@@ -1,0 +1,11 @@
+{
+  "failures": 0,
+  "passes": 186,
+  "test_packages": 4,
+  "per_package": {
+    "github.com/renbtg-cloud/speeditout/audioquality": 33,
+    "github.com/renbtg-cloud/speeditout/cmd/eval": 2,
+    "github.com/renbtg-cloud/speeditout/cmd/speeditout": 24,
+    "github.com/renbtg-cloud/speeditout/engine": 127
+  }
+}
